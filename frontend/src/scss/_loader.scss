@@ -1,0 +1,74 @@
+@use "variables" as *;
+
+.app_splash {
+  position: fixed;
+  inset: 0;
+
+  z-index: 200;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: $bg;
+}
+
+.app_splash_mark {
+  width: 40px;
+  height: 40px;
+
+  color: $moss;
+
+  animation: app_splash_breathe 1.6s ease-in-out infinite;
+
+  svg {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes app_splash_breathe {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.88);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.page_loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  min-height: 100vh;
+
+  text-align: center;
+
+  p {
+    color: $ink_soft;
+
+    font-family: $font_mono;
+    font-size: 12px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+}
+
+.page_loader_spinner {
+  width: 26px;
+  height: 26px;
+
+  border: 2px solid $line;
+  border-right-color: $moss;
+  border-radius: 50%;
+  animation: btn_spin 0.7s linear infinite;
+}

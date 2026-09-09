@@ -1,0 +1,283 @@
+{
+  "common": {
+    "loading": "Ładowanie…",
+    "loadingCollection": "Zbieramy kolekcję…"
+  },
+
+  "meta": {
+    "title": "Understory — Rzadkie rośliny doniczkowe"
+  },
+
+  "header": {
+    "collection": "Kolekcja",
+    "journal": "Dziennik",
+    "about": "O nas",
+    "rarePlants": "Rzadkie",
+    "account": "Konto",
+    "bag": "Koszyk",
+    "shopIn": "Sklep w",
+    "accountPopover": {
+      "account": "Konto",
+      "title": "Twoje konto",
+      "welcome": "Witaj",
+      "orders": "Zamówienia",
+      "plants": "Rośliny",
+      "wishlist": "Lista życzeń",
+      "since": "Członek od",
+      "loyalty": "Lojalność",
+      "last": "Ostatnie zamówienie",
+      "logout": "Wyloguj się",
+      "loyaltyNewcomer": "Nowicjusz",
+      "loyaltySeedling": "Sadzonka",
+      "loyaltyGrower": "Hodowca",
+      "loyaltyCultivator": "Kultywator",
+      "loyaltyBotanist": "Botanik",
+      "noOrders": "Brak zamówień"
+    }
+  },
+
+  "rare": {
+    "eyebrow": "Rzadka kolekcja",
+    "title": "Rzadkie okazy",
+    "description": "1 okaz — Niezwykłe rośliny do Twojego domu.",
+    "emptyTitle": "Nie znaleziono rzadkich roślin.",
+    "emptyDescription": "Wkrótce pojawią się nowe rzadkie rośliny."
+  },
+
+  "auth": {
+    "name": "Imię",
+    "namePlaceholder": "Wpisz imię",
+    "email": "E-mail",
+    "emailPlaceholder": "Wpisz adres e-mail",
+    "password": "Hasło",
+    "passwordPlaceholder": "Wpisz hasło",
+    "login": "Zaloguj się",
+    "signUp": "Zarejestruj się",
+    "welcomeBack": "Witaj ponownie",
+    "loginIntro": "Zobacz zamówienia i swoją kolekcję roślin",
+    "newToUnderstory": "Nowy w Understory?",
+    "signupIntro": "Zapisuj dane, śledź zamówienia i zarządzaj roślinami",
+    "signupHint": "Co najmniej 8 znaków. Twoje dane są prywatne",
+    "signupHintShort": "8+ znaków. Twoje dane są prywatne",
+    "alreadyHaveAccount": "Masz już konto?",
+    "errors": {
+      "emailError": "Nie znaleźliśmy konta z tym adresem e-mail",
+      "passwordError": "Nie udało się zweryfikować hasła",
+      "nameRequired": "Imię jest wymagane",
+      "nameMaxLength": "Imię może mieć maks. 20 znaków",
+      "invalidEmail": "Wprowadź prawidłowy adres e-mail",
+      "passwordLength": "Hasło musi mieć 8–100 znaków",
+      "userNotFound": "Nie znaleziono użytkownika",
+      "emailAlreadyExists": "Konto z tym adresem e-mail już istnieje"
+    }
+  },
+
+  "hero": {
+    "eyebrow": "Lokalnie uprawiane / Dbała wysyłka",
+    "titleStart": "Rzadkie rośliny,",
+    "titleEmphasis": "starannie hodowane",
+    "titleEnd": "dla Twojego domu",
+    "description": "Dojrzałe, ukorzenione i gotowe do Twojego domu",
+    "actions": {
+      "shop": "Zobacz kolekcję",
+      "ghost": "Dziennik pielęgnacji"
+    }
+  },
+
+  "head": {
+    "arrival": "Nowe w tym tygodniu",
+    "view": "Zobacz wszystkie",
+    "stock": {
+      "inStock": "Dostępna",
+      "low": "Mało sztuk",
+      "out": "Wyprzedana"
+    }
+  },
+
+  "shop": {
+    "eyebrow": "Pełny katalog",
+    "title": "Odkryj kolekcję",
+    "specimen": "egzemplarz",
+    "specimens": "egzemplarze",
+    "description": "Starannie wybrane i uprawiane do dojrzałości",
+    "result": "wynik",
+    "results": "wyniki",
+    "noPlants": "Na razie nic tutaj nie ma",
+    "noPlantsDescription": "W tej chwili nie mamy dostępnych roślin z tej rodziny.",
+    "filters": {
+      "all": "Wszystkie",
+      "label": "Filtruj według rodziny"
+    },
+    "sort": {
+      "featured": "Polecane",
+      "priceAsc": "Cena: rosnąco",
+      "priceDesc": "Cena: malejąco",
+      "name": "Nazwa: A–Z"
+    }
+  },
+
+  "cart": {
+    "yourBag": "Twój koszyk",
+    "reviewYourBag": "Sprawdź koszyk",
+    "orderSummary": "Podsumowanie",
+    "freeShipping": "Dodaj €{amount}, aby otrzymać darmową dostawę",
+    "freeShippingUnlocked": "Darmowa dostawa",
+    "inStock": "Dostępny",
+    "outOfStock": "Brak w magazynie",
+    "lowStock": "Niski stan magazynowy",
+    "subtotal": "Suma częściowa",
+    "shipping": "Dostawa",
+    "free": "Darmowa",
+    "estimatedTax": "Szacowany podatek",
+    "total": "Razem",
+    "proceedToCheckout": "Przejdź do kasy",
+    "remove": "Usuń",
+    "each": "za szt.",
+    "decreaseQuantity": "Zmniejsz ilość",
+    "increaseQuantity": "Zwiększ ilość",
+    "emptyTitle": "Twój koszyk jest pusty",
+    "emptyDescription": "Jeszcze nic nie wyrosło. Znajdź coś wartego czekania.",
+    "shopCollection": "Zobacz kolekcję",
+    "loadError": "Nie udało się załadować koszyka",
+    "tryAgain": "Spróbuj ponownie"
+  },
+
+  "checkout": {
+    "title": "Finalizacja zamówienia",
+    "completeOrder": "Dokończ zamówienie",
+    "shippingInformation": "Dane dostawy",
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "placingOrder": "Składanie zamówienia...",
+    "email": "Adres e-mail",
+    "address": "Adres",
+    "city": "Miasto",
+    "postalCode": "Kod pocztowy",
+    "country": "Kraj",
+    "selectCountry": "Wybierz kraj",
+    "payment": "Płatność",
+    "cardPayment": "Płatność kartą",
+    "cardDescription": "Zapłać bezpiecznie kartą kredytową lub debetową.",
+    "placeOrder": "Złóż zamówienie",
+    "orderSummary": "Podsumowanie",
+    "quantity": "Ilość",
+    "fillRequiredFields": "Uzupełnij wymagane pola.",
+    "orderSuccess": "Zamówienie zostało złożone",
+    "orderSuccessDescription": "Twoje zamówienie zostało pomyślnie złożone. Dziękujemy, że wybrałeś Understory.",
+    "orderError": "Nie udało się złożyć zamówienia. Spróbuj ponownie."
+  },
+
+  "notFound": {
+    "title": "Nie znaleziono strony",
+    "description": "Strona nie istnieje lub została przeniesiona.",
+    "backToHome": "Wróć do strony głównej"
+  },
+
+  "plant": {
+    "notFound": "Nie znaleziono rośliny",
+    "notFoundDescription": "Szukana roślina nie istnieje.",
+    "addedToBagDescription": "Roślina została dodana do koszyka",
+    "addedMultipleToBagDescription": "Dodano {{quantity}} roślin do torby.",
+    "backToShop": "Wróć do sklepu",
+    "decreaseQuantity": "Zmniejsz ilość",
+    "increaseQuantity": "Zwiększ ilość",
+    "addToBag": "Dodaj do koszyka",
+    "addedToBag": "Dodano do koszyka",
+    "family": "Rodzina",
+    "stock": "Dostępność",
+    "pairsWellWith": "Dobrze komponuje się z"
+  },
+
+  "plants": {
+    "monstera": {
+      "description": "Zdrowa Monstera z bujnymi, naturalnie rozdzielonymi liśćmi."
+    },
+    "fiddle": {
+      "description": "Tropikalna roślina z błyszczącymi liśćmi. Lubi jasne światło."
+    }
+  },
+
+  "philosophy": {
+    "title1": "Uprawiane, nie zabrane",
+    "description1": "Każda roślina rozwija zdrowy system korzeniowy przed wysyłką",
+    "title2": "Opakowanie z myślą o klimacie",
+    "description2": "Opakowanie dopasowujemy do każdej rośliny i jej drogi",
+    "title3": "90-dniowa gwarancja na korzenie",
+    "description3": "Jeśli roślina nie zaaklimatyzuje się w ciągu 90 dni, wymienimy ją"
+  },
+
+  "quote": {
+    "title": "Pierwsza roślina od razu czuła się jak w domu.",
+    "description": "— R. Alaoui, klient Understory od 2024 roku"
+  },
+
+  "static": {
+    "care": {
+      "eyebrow": "Dziennik pielęgnacji",
+      "title": "Notatki ze szklarni",
+      "intro": "Praktyczne wskazówki, jak dbać o zdrowie roślin w domu",
+      "body1": "Rzadkie aroidy nie lubią nadmiaru wody. Pozwól podłożu dobrze przeschnąć między podlewaniami i sprawdź je przed kolejnym podlewaniem",
+      "body2": "Wilgotność ma szczególne znaczenie dla roślin tropikalnych. Nawilżacz lub zamknięta witryna mogą zapewnić lepsze warunki",
+      "body3": "Nowe liście to dobry znak zdrowego wzrostu. Jeśli wzrost zwalnia, sprawdź światło, podlewanie i wilgotność"
+    },
+
+    "about": {
+      "eyebrow": "Studio",
+      "title": "Mały dom roślin",
+      "intro": "Understory powstało w 2019 roku i z czasem wyrosło na szklarnię niedaleko Portland",
+      "body1": "Sprzedajemy rośliny dopiero wtedy, gdy mają zdrowy, dobrze rozwinięty system korzeniowy. Sadzonki nie są sprzedawane jako dojrzałe rośliny",
+      "body2": "Każde zamówienie pakujemy z myślą o konkretnej roślinie, uwzględniając jej rozmiar, kondycję i drogę",
+      "body3": "Uprawiamy rośliny w małych partiach, aby każda miała czas, uwagę i odpowiednią pielęgnację przed wysyłką"
+    },
+
+    "guarantee": {
+      "eyebrow": "Nasza obietnica",
+      "title": "90-dniowa gwarancja na korzenie",
+      "intro": "Jeśli roślina nie zaaklimatyzuje się w ciągu 90 dni, pomożemy znaleźć rozwiązanie i przywrócić jej dobrą kondycję",
+      "body1": "Skontaktuj się z pomocą techniczną i podaj numer zamówienia, abyśmy mogli szybko pomóc",
+      "body2": "Gwarancja obejmuje rozwój korzeni i typowy stres związany z transportem",
+      "body3": "Jeśli potrzebna będzie wymiana, otrzymasz roślinę z najbliższej dostępnej partii tego samego lub podobnego gatunku"
+    },
+
+    "shipping": {
+      "eyebrow": "Wysyłka",
+      "title": "Wysyłka z myślą o klimacie",
+      "intro": "Każde zamówienie przygotowujemy z uwzględnieniem rośliny, pogody i całej trasy",
+      "body1": "Wysyłamy od poniedziałku do środy, aby rośliny spędzały jak najmniej czasu w magazynach w weekend",
+      "body2": "Ochronę sezonową dobieramy do miejsca docelowego, pogody i warunków wysyłki",
+      "body3": "Zamówienia powyżej 150 $ wysyłamy bezpłatnie. Przy mniejszych zamówieniach obowiązuje opłata 18 $"
+    },
+
+    "contact": {
+      "eyebrow": "Kontakt",
+      "title": "Porozmawiaj z nami",
+      "intro": "Masz pytania o zamówienie, pielęgnację lub swoją kolekcję? Chętnie pomożemy",
+      "body1": "To wersja demonstracyjna frontendu, dlatego formularz kontaktowy nie jest jeszcze połączony z systemem wiadomości",
+      "body2": "W sprawach dotyczących zamówienia podaj jego numer, abyśmy mogli szybko znaleźć potrzebne informacje"
+    }
+  },
+
+  "footer": {
+    "description": "Mały dom roślin dla tych, którzy są gotowi poczekać na właściwy egzemplarz",
+    "care": {
+      "title": "Pielęgnacja",
+      "option1": "Dziennik pielęgnacji",
+      "option2": "Gwarancja na korzenie",
+      "option3": "Wysyłka i klimat"
+    },
+    "shop": {
+      "title": "Sklep",
+      "option1": "Bestsellery",
+      "option2": "Rzadkie okazy",
+      "option3": "Karty podarunkowe"
+    },
+    "studio": {
+      "title": "Studio",
+      "option1": "O nas",
+      "option2": "Odwiedź szklarnię",
+      "option3": "Kontakt"
+    },
+    "year": "© UNDERSTORY, ZAŁ. 2019",
+    "location": "ZAKORZENIONE W PORTLAND, OREGON"
+  }
+}
