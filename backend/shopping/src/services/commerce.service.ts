@@ -12,8 +12,8 @@ export async function addPlant(pool: Pool, input: CreatePlantInput): Promise<Res
 
   const price = input.price;
 
-  if(!Number.isInteger(price) || price < 0) {
-    return fail("Price must be greater than zero", 400);
+  if(!Number.isInteger(price) || price <= 0) {
+    return fail("Price must be greater than 0", 400);
   };
 
   const stock = input.stock;
@@ -72,8 +72,8 @@ export async function updatePlant(pool: Pool, input: UpdatePlantInput, id: strin
 
   const price = input.price;
 
-  if(price != null && (!Number.isInteger(price) || price < 0)) {
-    return fail("Price must be greater than zero", 400);
+  if(price != null && (!Number.isInteger(price) || price <= 0)) {
+    return fail("Price must be greater than 0", 400);
   };
 
   const stock = input.stock;

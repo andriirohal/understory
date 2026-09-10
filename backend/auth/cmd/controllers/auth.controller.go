@@ -3,7 +3,7 @@ package controllers
 import (
   "Auth/cmd/models"
   "Auth/cmd/services"
-  
+
   "net/http"
   "github.com/gin-gonic/gin"
 );
@@ -36,10 +36,10 @@ func GetLoggedInUser(ctx *gin.Context) {
   userId, exists := ctx.Get("userId");
 
   if !exists {
-	ctx.JSON(401, gin.H{
-	  "error": "Unauthorized",
-	});
-	return;
+	  ctx.JSON(401, gin.H{
+	    "error": "Unauthorized",
+	  });
+	  return;
   };
 
   userIdString, ok := userId.(string)
@@ -106,11 +106,17 @@ func SignUpUser(ctx *gin.Context) {
 
   setRefreshCookie(ctx, user.RefreshToken);
 
-  ctx.JSON(201, user);
+  ctx.JSON(200, gin.H {
+    "userId": user.UserId,
+    "name": user.Name,
+    "email": user.Email,
+    "accessToken": user.AccessToken,
+    "createdAt": user.CreatedAt,
+  });
 };
 
 func LogInUser(ctx *gin.Context) {
-  var input models.UserInput;
+  var input models.AuthInput;
   
   if err := ctx.ShouldBindJSON(&input); err != nil {
 	  ctx.JSON(400, gin.H{
@@ -130,7 +136,13 @@ func LogInUser(ctx *gin.Context) {
 
   setRefreshCookie(ctx, user.RefreshToken);
 
-  ctx.JSON(200, user);
+  ctx.JSON(200, gin.H {
+    "userId": user.UserId,
+    "name": user.Name,
+    "email": user.Email,
+    "accessToken": user.AccessToken,
+    "createdAt": user.CreatedAt,
+  });
 };
 
 func RotateUserTokens(ctx *gin.Context) {

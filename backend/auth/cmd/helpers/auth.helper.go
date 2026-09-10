@@ -89,20 +89,6 @@ func ScanUserId(row pgx.Row) (string, error) {
   return userId, err;
 };
 
-func ScanUserRecord(row pgx.Row) (models.UserRecord, error) {
-  var user models.UserRecord;
-
-  err := row.Scan(
-    &user.UserId,
-    &user.Name,
-    &user.Email,
-    &user.RefreshToken,
-    &user.CreatedAt,
-  );
-
-  return user, err;
-};
-
 func ScanUser(row pgx.Row) (models.User, error) {
   var user models.User;
 
@@ -111,6 +97,20 @@ func ScanUser(row pgx.Row) (models.User, error) {
     &user.Name,
     &user.Email,
     &user.Password,
+    &user.RefreshToken,
+    &user.CreatedAt,
+  );
+
+  return user, err;
+};
+
+func ScanUserRecord(row pgx.Row) (models.UserRecord, error) {
+  var user models.UserRecord;
+
+  err := row.Scan(
+    &user.UserId,
+    &user.Name,
+    &user.Email,
     &user.RefreshToken,
     &user.CreatedAt,
   );

@@ -9,8 +9,8 @@ export async function addToCart(pool: Pool, userId: string, input: CartItemInput
   try {
     const { plantId, quantity } = input;
 
-    if(!Number.isInteger(quantity) || quantity < 0) {
-      return fail("Quantity cannot be negative", 400);
+    if(!Number.isInteger(quantity) || quantity <= 0) {
+      return fail("Quantity must be greater than 0", 400);
     };
 
     await client.query("BEGIN");
@@ -113,8 +113,8 @@ export async function updateCart(pool: Pool, userId: string, input: CartItemInpu
   try {
     const quantity = input.quantity;
     
-    if(!Number.isInteger(quantity) || quantity < 0) {
-      return fail("Quantity cannot be negative", 400);
+    if(!Number.isInteger(quantity) || quantity <= 0) {
+      return fail("Quantity must be greater than 0", 400);
     };
 
     await client.query("BEGIN");

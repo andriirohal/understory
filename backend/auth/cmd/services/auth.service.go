@@ -84,7 +84,7 @@ func SignUpUser(ctx context.Context, input models.UserInput) (models.AuthRespons
   return response, nil;
 };
 
-func LogInUser(ctx context.Context, input models.UserInput) (models.AuthResponse, error) {
+func LogInUser(ctx context.Context, input models.AuthInput) (models.AuthResponse, error) {
   email := helpers.IsValidEmail(input.Email);
     
   if email == "" {

@@ -18,19 +18,19 @@ type UserResponse struct {
   CreatedAt time.Time `json:"createdAt"`;
 };
 
+type UserRecord struct {
+  UserId string `json:"userId"`;
+  Name string `json:"name"`;
+  Email string `json:"email"`;
+  RefreshToken *string `json:"refreshToken"`;
+  CreatedAt time.Time `json:"createdAt"`;
+};
+
 type User struct {
   UserId string `json:"userId"`;
   Name string `json:"name"`;
   Email string `json:"email"`;
   Password string `json:"password"`;
-  RefreshToken *string `json:"refreshToken"`;
-  CreatedAt time.Time `json:"createdAt"`;
-};
-
-type UserRecord struct {
-  UserId string `json:"userId"`;
-  Name string `json:"name"`;
-  Email string `json:"email"`;
   RefreshToken *string `json:"refreshToken"`;
   CreatedAt time.Time `json:"createdAt"`;
 };
@@ -42,6 +42,11 @@ type UserBase struct {
 
 type UserInput struct {
   Name string `json:"name"`;
+  Email string `json:"email"`;
+  Password string `json:"password"`;
+};
+
+type AuthInput struct {
   Email string `json:"email"`;
   Password string `json:"password"`;
 };
