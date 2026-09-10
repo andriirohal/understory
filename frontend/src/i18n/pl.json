@@ -21,10 +21,10 @@
       "title": "Twoje konto",
       "welcome": "Witaj",
       "orders": "Zamówienia",
-      "plants": "Rośliny",
+      "plants": "Twoje rośliny",
       "wishlist": "Lista życzeń",
       "since": "Członek od",
-      "loyalty": "Lojalność",
+      "loyalty": "Poziom lojalności",
       "last": "Ostatnie zamówienie",
       "logout": "Wyloguj się",
       "loyaltyNewcomer": "Nowicjusz",
@@ -77,7 +77,7 @@
     "titleStart": "Rzadkie rośliny,",
     "titleEmphasis": "starannie hodowane",
     "titleEnd": "dla Twojego domu",
-    "description": "Dojrzałe, ukorzenione i gotowe do Twojego domu",
+    "description": "Dojrzałe, dobrze ukorzenione i gotowe do Twojego domu",
     "actions": {
       "shop": "Zobacz kolekcję",
       "ghost": "Dziennik pielęgnacji"
@@ -177,7 +177,7 @@
     "notFound": "Nie znaleziono rośliny",
     "notFoundDescription": "Szukana roślina nie istnieje.",
     "addedToBagDescription": "Roślina została dodana do koszyka",
-    "addedMultipleToBagDescription": "Dodano {{quantity}} roślin do torby.",
+    "addedMultipleToBagDescription": "Dodano {{quantity}} roślin do koszyka.",
     "backToShop": "Wróć do sklepu",
     "decreaseQuantity": "Zmniejsz ilość",
     "increaseQuantity": "Zwiększ ilość",
@@ -193,17 +193,21 @@
       "description": "Zdrowa Monstera z bujnymi, naturalnie rozdzielonymi liśćmi."
     },
     "fiddle": {
-      "description": "Tropikalna roślina z błyszczącymi liśćmi. Lubi jasne światło."
+      "description": "Tropikalna roślina z błyszczącymi, skrzypcowatymi liśćmi. Dobrze rośnie w jasnym świetle."
     }
   },
 
   "philosophy": {
-    "title1": "Uprawiane, nie zabrane",
-    "description1": "Każda roślina rozwija zdrowy system korzeniowy przed wysyłką",
-    "title2": "Opakowanie z myślą o klimacie",
-    "description2": "Opakowanie dopasowujemy do każdej rośliny i jej drogi",
-    "title3": "90-dniowa gwarancja na korzenie",
-    "description3": "Jeśli roślina nie zaaklimatyzuje się w ciągu 90 dni, wymienimy ją"
+    "titles": [
+      "Uprawiane, nie zabrane",
+      "Opakowanie z myślą o klimacie",
+      "90-dniowa gwarancja na korzenie"
+    ],
+    "descriptions": [
+      "Każda roślina rozwija zdrowy system korzeniowy przed wysyłką",
+      "Opakowanie dopasowujemy do każdej rośliny i jej drogi",
+      "Jeśli roślina nie zaaklimatyzuje się w ciągu 90 dni, wymienimy ją"
+    ]
   },
 
   "quote": {
@@ -216,44 +220,97 @@
       "eyebrow": "Dziennik pielęgnacji",
       "title": "Notatki ze szklarni",
       "intro": "Praktyczne wskazówki, jak dbać o zdrowie roślin w domu",
-      "body1": "Rzadkie aroidy nie lubią nadmiaru wody. Pozwól podłożu dobrze przeschnąć między podlewaniami i sprawdź je przed kolejnym podlewaniem",
-      "body2": "Wilgotność ma szczególne znaczenie dla roślin tropikalnych. Nawilżacz lub zamknięta witryna mogą zapewnić lepsze warunki",
-      "body3": "Nowe liście to dobry znak zdrowego wzrostu. Jeśli wzrost zwalnia, sprawdź światło, podlewanie i wilgotność"
+      "body": [
+        "Rzadkie aroidy nie lubią nadmiaru wody. Pozwól podłożu dobrze przeschnąć między podlewaniami i sprawdź je przed kolejnym podlewaniem",
+        "Wilgotność ma szczególne znaczenie dla roślin tropikalnych. Nawilżacz, zamknięta witryna lub stale wilgotne otoczenie mogą pomóc zapewnić lepsze warunki",
+        "Nowe liście to dobry znak zdrowego wzrostu. Jeśli wzrost zwalnia, sprawdź światło, podlewanie i wilgotność wokół rośliny"
+      ]
     },
 
     "about": {
       "eyebrow": "Studio",
       "title": "Mały dom roślin",
       "intro": "Understory powstało w 2019 roku i z czasem wyrosło na szklarnię niedaleko Portland",
-      "body1": "Sprzedajemy rośliny dopiero wtedy, gdy mają zdrowy, dobrze rozwinięty system korzeniowy. Sadzonki nie są sprzedawane jako dojrzałe rośliny",
-      "body2": "Każde zamówienie pakujemy z myślą o konkretnej roślinie, uwzględniając jej rozmiar, kondycję i drogę",
-      "body3": "Uprawiamy rośliny w małych partiach, aby każda miała czas, uwagę i odpowiednią pielęgnację przed wysyłką"
+      "body": [
+        "Sprzedajemy rośliny dopiero wtedy, gdy mają zdrowy, dobrze rozwinięty system korzeniowy. Sadzonki nie są sprzedawane jako dojrzałe rośliny",
+        "Każde zamówienie pakujemy z myślą o konkretnej roślinie, uwzględniając jej rozmiar, kondycję i drogę, aby bezpiecznie dotarła na miejsce",
+        "Uprawiamy rośliny w małych partiach, aby każda miała wystarczająco dużo czasu, uwagi i odpowiedniej pielęgnacji przed opuszczeniem szklarni"
+      ]
     },
 
     "guarantee": {
       "eyebrow": "Nasza obietnica",
       "title": "90-dniowa gwarancja na korzenie",
-      "intro": "Jeśli roślina nie zaaklimatyzuje się w ciągu 90 dni, pomożemy znaleźć rozwiązanie i przywrócić jej dobrą kondycję",
-      "body1": "Skontaktuj się z pomocą techniczną i podaj numer zamówienia, abyśmy mogli szybko pomóc",
-      "body2": "Gwarancja obejmuje rozwój korzeni i typowy stres związany z transportem",
-      "body3": "Jeśli potrzebna będzie wymiana, otrzymasz roślinę z najbliższej dostępnej partii tego samego lub podobnego gatunku"
+      "intro": "Jeśli roślina nie zaaklimatyzuje się w ciągu 90 dni, pomożemy znaleźć odpowiednie rozwiązanie i przywrócić ją na właściwy tor",
+      "body": [
+        "Skontaktuj się z pomocą techniczną i podaj numer zamówienia, abyśmy mogli szybko sprawdzić szczegóły i pomóc w kolejnych krokach",
+        "Gwarancja obejmuje rozwój korzeni i normalny stres związany z transportem, w tym naturalne przystosowanie rośliny do nowego otoczenia",
+        "Jeśli potrzebna będzie wymiana, roślina będzie pochodzić z najbliższej dostępnej partii tego samego lub porównywalnego gatunku"
+      ]
     },
 
     "shipping": {
       "eyebrow": "Wysyłka",
       "title": "Wysyłka z myślą o klimacie",
-      "intro": "Każde zamówienie przygotowujemy z uwzględnieniem rośliny, pogody i całej trasy",
-      "body1": "Wysyłamy od poniedziałku do środy, aby rośliny spędzały jak najmniej czasu w magazynach w weekend",
-      "body2": "Ochronę sezonową dobieramy do miejsca docelowego, pogody i warunków wysyłki",
-      "body3": "Zamówienia powyżej 150 $ wysyłamy bezpłatnie. Przy mniejszych zamówieniach obowiązuje opłata 18 $"
+      "intro": "Każde zamówienie przygotowujemy z uwzględnieniem rośliny, pogody i całej trasy, aby ograniczyć stres związany z transportem",
+      "body": [
+        "Wysyłamy od poniedziałku do środy, aby rośliny spędzały jak najmniej czasu w magazynach lub centrach przeładunkowych w weekend",
+        "Ochronę sezonową dobieramy do miejsca docelowego, pogody i aktualnych warunków wysyłki",
+        "Zamówienia powyżej 150 $ wysyłamy bezpłatnie. Przy mniejszych zamówieniach obowiązuje stała opłata za wysyłkę w wysokości 18 $"
+      ]
     },
 
     "contact": {
       "eyebrow": "Kontakt",
-      "title": "Porozmawiaj z nami",
-      "intro": "Masz pytania o zamówienie, pielęgnację lub swoją kolekcję? Chętnie pomożemy",
-      "body1": "To wersja demonstracyjna frontendu, dlatego formularz kontaktowy nie jest jeszcze połączony z systemem wiadomości",
-      "body2": "W sprawach dotyczących zamówienia podaj jego numer, abyśmy mogli szybko znaleźć potrzebne informacje"
+      "title": "Chętnie Cię usłyszymy.",
+      "intro": "Masz pytanie dotyczące roślin, zamówienia lub czegoś innego? Skontaktuj się z nami.",
+
+      "studio": {
+        "label": "Studio",
+        "title": "Portland, Oregon",
+        "description": "Nasza szklarnia i studio znajdują się w pobliżu Portland, gdzie uprawiamy i przygotowujemy każdą roślinę do podróży."
+      },
+
+      "emailInfo": {
+        "label": "E-mail",
+        "title": "hello@understory.com",
+        "description": "W sprawie pytań dotyczących roślin, zamówień, pielęgnacji lub innych kwestii napisz do nas, a odpowiemy tak szybko, jak to możliwe."
+      },
+
+      "developer": {
+        "label": "Strona internetowa",
+        "title": "Stworzona przez Andrii Rohala",
+        "description": "Strona Understory została wykonana od podstaw jako unikalne doświadczenie zakupowe dla sklepu z roślinami."
+      },
+
+      "response": {
+        "label": "Czas odpowiedzi",
+        "title": "W ciągu 1–2 dni roboczych",
+        "description": "Zazwyczaj odpowiadamy w godzinach pracy szklarni, od poniedziałku do piątku.",
+        "note": "Dziękujemy za cierpliwość — odpowiadamy każdemu osobiście, ponieważ każda roślina i każde pytanie są dla nas ważne."
+      },
+
+      "form": {
+        "label": "Wyślij wiadomość",
+        "title": "Porozmawiajmy",
+        "description": "Masz pytanie dotyczące rośliny, zamówienia lub czegoś innego? Wyślij nam wiadomość, a odpowiemy."
+      },
+
+      "name": "Imię",
+      "email": "E-mail",
+      "message": "Wiadomość",
+      "send": "Wyślij wiadomość",
+
+      "errors": {
+        "nameRequired": "Imię jest wymagane.",
+        "nameShort": "Imię musi mieć co najmniej 2 znaki.",
+        "nameLong": "Imię jest zbyt długie.",
+        "emailRequired": "E-mail jest wymagany.",
+        "emailInvalid": "Wprowadź prawidłowy adres e-mail.",
+        "messageRequired": "Wiadomość jest wymagana.",
+        "messageShort": "Wiadomość musi mieć co najmniej 10 znaków.",
+        "messageLong": "Wiadomość jest zbyt długa."
+      }
     }
   },
 
@@ -261,21 +318,19 @@
     "description": "Mały dom roślin dla tych, którzy są gotowi poczekać na właściwy egzemplarz",
     "care": {
       "title": "Pielęgnacja",
-      "option1": "Dziennik pielęgnacji",
-      "option2": "Gwarancja na korzenie",
-      "option3": "Wysyłka i klimat"
+      "options": [
+        "Dziennik pielęgnacji",
+        "Gwarancja na korzenie",
+        "Wysyłka i klimat"
+      ]
     },
     "shop": {
       "title": "Sklep",
-      "option1": "Bestsellery",
-      "option2": "Rzadkie okazy",
-      "option3": "Karty podarunkowe"
+      "options": ["Bestsellery", "Rzadkie okazy", "Karty podarunkowe"]
     },
     "studio": {
       "title": "Studio",
-      "option1": "O nas",
-      "option2": "Odwiedź szklarnię",
-      "option3": "Kontakt"
+      "options": ["O nas", "Odwiedź szklarnię", "Kontakt"]
     },
     "year": "© UNDERSTORY, ZAŁ. 2019",
     "location": "ZAKORZENIONE W PORTLAND, OREGON"

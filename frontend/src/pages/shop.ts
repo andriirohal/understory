@@ -370,10 +370,6 @@ export function getShopState(): ShopState {
   return { ...shopState };
 }
 
-export function setShopState(state: ShopState): void {
-  shopState = { ...state };
-}
-
 export function refreshShopTranslations(root: HTMLElement): void {
   const state = getShopState();
 

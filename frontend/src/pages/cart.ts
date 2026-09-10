@@ -187,7 +187,7 @@ function renderCartContent(lines: CartLine[]): string {
                   <div class="row_unit_price">
                       €${line.price.toFixed(2)} ${t("cart.each")}
                   </div>
-                  
+
                   <div class="row_bottom">
 
                     <div

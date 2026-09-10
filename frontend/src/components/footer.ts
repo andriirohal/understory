@@ -30,19 +30,19 @@ export function renderFooter(): string {
         <ul>
           <li>
             <a href="/shop">
-              ${t("footer.shop.option1")}
+              ${t("footer.shop.options.0")}
+            </a>
+          </li>
+
+          <li>
+            <a href="/rare">
+              ${t("footer.shop.options.1")}
             </a>
           </li>
 
           <li>
             <a href="/shop">
-              ${t("footer.shop.option2")}
-            </a>
-          </li>
-
-          <li>
-            <a href="/shop">
-              ${t("footer.shop.option3")}
+              ${t("footer.shop.options.2")}
             </a>
           </li>
         </ul>
@@ -54,19 +54,19 @@ export function renderFooter(): string {
         <ul>
           <li>
             <a href="/care">
-              ${t("footer.care.option1")}
+              ${t("footer.care.options.0")}
             </a>
           </li>
 
           <li>
             <a href="/guarantee">
-              ${t("footer.care.option2")}
+              ${t("footer.care.options.1")}
             </a>
           </li>
 
           <li>
             <a href="/shipping">
-              ${t("footer.care.option3")}
+              ${t("footer.care.options.2")}
             </a>
           </li>
         </ul>
@@ -78,19 +78,19 @@ export function renderFooter(): string {
         <ul>
           <li>
             <a href="/about">
-              ${t("footer.studio.option1")}
+              ${t("footer.studio.options.0")}
             </a>
           </li>
 
           <li>
             <a href="/about">
-              ${t("footer.studio.option2")}
+              ${t("footer.studio.options.1")}
             </a>
           </li>
 
           <li>
             <a href="/contact">
-              ${t("footer.studio.option3")}
+              ${t("footer.studio.options.2")}
             </a>
           </li>
         </ul>
@@ -122,7 +122,6 @@ function refreshFooter(): void {
   temp.innerHTML = renderFooter();
 
   const newFooter = temp.querySelector<HTMLElement>(".site_footer");
-
   const newBottom = temp.querySelector<HTMLElement>(".foot_bottom");
 
   if (!newFooter || !newBottom) {

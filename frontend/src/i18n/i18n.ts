@@ -17,8 +17,6 @@ const LANGUAGE_STORAGE_KEY = "lang";
 
 let currentLanguage: Language = DEFAULT_LANGUAGE;
 
-let isChangingLanguage = false;
-
 function isLanguage(value: string | null): value is Language {
   return (
     value !== null && Object.prototype.hasOwnProperty.call(translations, value)
@@ -29,32 +27,46 @@ export function getLanguage(): Language {
   return currentLanguage;
 }
 
-export function isLanguageChanging(): boolean {
-  return isChangingLanguage;
-}
-
-function getTranslation(language: Language, key: string): string | undefined {
-  const value = key.split(".").reduce<unknown>((current, part) => {
+function getTranslation(language: Language, key: string): unknown {
+  return key.split(".").reduce<unknown>((current, part) => {
     if (typeof current !== "object" || current === null) {
       return undefined;
     }
 
     return (current as Record<string, unknown>)[part];
   }, translations[language]);
-
-  return typeof value === "string" ? value : undefined;
 }
 
 export function getTranslations(language: Language, key: string): string {
   const translation = getTranslation(language, key);
 
-  if (translation !== undefined) {
+  if (typeof translation === "string") {
     return translation;
   }
 
   const fallback = getTranslation(DEFAULT_LANGUAGE, key);
 
-  return fallback ?? key;
+  return typeof fallback === "string" ? fallback : key;
+}
+
+export function getTranslationArray(language: Language, key: string): string[] {
+  const translation = getTranslation(language, key);
+
+  if (Array.isArray(translation)) {
+    return translation.filter(
+      (value): value is string => typeof value === "string",
+    );
+  }
+
+  const fallback = getTranslation(DEFAULT_LANGUAGE, key);
+
+  if (Array.isArray(fallback)) {
+    return fallback.filter(
+      (value): value is string => typeof value === "string",
+    );
+  }
+
+  return [];
 }
 
 export function t(key: string, variables?: Record<string, string>): string {
@@ -82,8 +94,6 @@ export function setLanguage(language: Language): void {
     return;
   }
 
-  isChangingLanguage = true;
-
   currentLanguage = language;
 
   localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
@@ -91,10 +101,6 @@ export function setLanguage(language: Language): void {
   applyLanguage(language);
 
   window.dispatchEvent(new Event("languagechange"));
-
-  requestAnimationFrame(() => {
-    isChangingLanguage = false;
-  });
 }
 
 export function initLanguage(): void {

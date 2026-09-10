@@ -92,7 +92,12 @@
 
   "head": {
     "arrival": "New this week",
-    "view": "View all"
+    "view": "View all",
+    "stock": {
+      "inStock": "In stock",
+      "low": "Only a few left",
+      "out": "Out of stock"
+    }
   },
 
   "shop": {
@@ -193,12 +198,16 @@
   },
 
   "philosophy": {
-    "title1": "Grown, not simply taken",
-    "description1": "Every plant develops a healthy root system before it ships",
-    "title2": "Climate-conscious packaging",
-    "description2": "Packaging is tailored to each plant and its journey",
-    "title3": "90-day root guarantee",
-    "description3": "If your plant doesn't settle in within 90 days, we'll replace it"
+    "titles": [
+      "Grown, not simply taken",
+      "Climate-conscious packaging",
+      "90-day root guarantee"
+    ],
+    "descriptions": [
+      "Every plant develops a healthy root system before it ships",
+      "Packaging is tailored to each plant and its journey",
+      "If your plant doesn't settle in within 90 days, we'll replace it"
+    ]
   },
 
   "quote": {
@@ -211,44 +220,97 @@
       "eyebrow": "Care journal",
       "title": "Notes from the greenhouse",
       "intro": "Practical tips for keeping your plants healthy and thriving at home",
-      "body1": "Rare aroids are sensitive to excess water. Let the soil dry well between waterings and always check its condition before watering again",
-      "body2": "Humidity is especially important for tropical plants. A humidifier, enclosed cabinet, or consistently humid environment can help maintain better conditions",
-      "body3": "New leaves are a good sign of healthy growth. If growth slows down, check the light, watering routine, and humidity around the plant"
+      "body": [
+        "Rare aroids are sensitive to excess water. Let the soil dry well between waterings and always check its condition before watering again",
+        "Humidity is especially important for tropical plants. A humidifier, enclosed cabinet, or consistently humid environment can help maintain better conditions",
+        "New leaves are a good sign of healthy growth. If growth slows down, check the light, watering routine, and humidity around the plant"
+      ]
     },
 
     "about": {
       "eyebrow": "The studio",
       "title": "A small plant house",
       "intro": "Understory began in 2019 and grew into a greenhouse near Portland",
-      "body1": "We sell plants only once they have a healthy, well-developed root system. Cuttings are never sold as established plants",
-      "body2": "Every order is packed specifically for the plant, taking its size, condition, and journey into account to help it travel safely",
-      "body3": "We intentionally grow in small batches so every plant receives enough time, attention, and proper care before leaving the greenhouse"
+      "body": [
+        "We sell plants only once they have a healthy, well-developed root system. Cuttings are never sold as established plants",
+        "Every order is packed specifically for the plant, taking its size, condition, and journey into account to help it travel safely",
+        "We intentionally grow in small batches so every plant receives enough time, attention, and proper care before leaving the greenhouse"
+      ]
     },
 
     "guarantee": {
       "eyebrow": "Our promise",
       "title": "90-day root guarantee",
       "intro": "If your plant doesn't settle in within 90 days, we'll help find the right solution and get it back on track",
-      "body1": "Contact support with your order number so we can quickly review the details and help with the next steps",
-      "body2": "The guarantee covers root development and normal shipping stress, including the plant's natural adjustment to a new environment",
-      "body3": "If a replacement is needed, it will come from the next available batch of the same or a comparable plant"
+      "body": [
+        "Contact support with your order number so we can quickly review the details and help with the next steps",
+        "The guarantee covers root development and normal shipping stress, including the plant's natural adjustment to a new environment",
+        "If a replacement is needed, it will come from the next available batch of the same or a comparable plant"
+      ]
     },
 
     "shipping": {
       "eyebrow": "Shipping",
       "title": "Shipping with climate in mind",
       "intro": "Every order is prepared with the plant, weather, and entire journey in mind to help reduce shipping stress",
-      "body1": "We ship Monday through Wednesday so plants spend as little time as possible in warehouses or transit centers over the weekend",
-      "body2": "Seasonal protection is selected based on the destination, weather, and current shipping conditions",
-      "body3": "Orders over $150 ship free. Smaller orders have a flat $18 shipping fee"
+      "body": [
+        "We ship Monday through Wednesday so plants spend as little time as possible in warehouses or transit centers over the weekend",
+        "Seasonal protection is selected based on the destination, weather, and current shipping conditions",
+        "Orders over $150 ship free. Smaller orders have a flat $18 shipping fee"
+      ]
     },
 
     "contact": {
       "eyebrow": "Contact",
-      "title": "Talk to us",
-      "intro": "Questions about an order, plant care, or your collection? We're happy to help",
-      "body1": "This is currently a frontend demo, so the contact form isn't connected to a live messaging service",
-      "body2": "For questions about an order, include your order number so we can quickly find the relevant details"
+      "title": "We'd love to hear from you.",
+      "intro": "Have a question about your plants, an order, or anything else? Get in touch.",
+
+      "studio": {
+        "label": "Studio",
+        "title": "Portland, Oregon",
+        "description": "Our greenhouse and studio are based near Portland, where we grow and prepare every plant for its journey."
+      },
+
+      "emailInfo": {
+        "label": "Email",
+        "title": "hello@understory.com",
+        "description": "For questions about plants, orders, care, or anything else, send us a message and we'll get back to you."
+      },
+
+      "developer": {
+        "label": "Website",
+        "title": "Built by Andrii Rohal",
+        "description": "The Understory website was designed and developed from the ground up as a custom plant shop experience."
+      },
+
+      "response": {
+        "label": "Response time",
+        "title": "Within 1–2 business days",
+        "description": "We usually respond during greenhouse hours, Monday through Friday, and do our best to get back to you as soon as we can.",
+        "note": "Thanks for your patience — we reply to everyone personally, because every plant and every question matters to us."
+      },
+
+      "form": {
+        "label": "Send a message",
+        "title": "Let's talk",
+        "description": "Have a question about a plant, an order, or anything else? Send us a message and we'll get back to you."
+      },
+
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send message",
+
+      "errors": {
+        "nameRequired": "Name is required.",
+        "nameShort": "Name must be at least 2 characters.",
+        "nameLong": "Name is too long.",
+        "emailRequired": "Email is required.",
+        "emailInvalid": "Please enter a valid email address.",
+        "messageRequired": "Message is required.",
+        "messageShort": "Message must be at least 10 characters.",
+        "messageLong": "Message is too long."
+      }
     }
   },
 
@@ -256,21 +318,15 @@
     "description": "A small plant house for anyone willing to wait for the right specimen",
     "care": {
       "title": "Care",
-      "option1": "Care journal",
-      "option2": "Root guarantee",
-      "option3": "Shipping & climate"
+      "options": ["Care journal", "Root guarantee", "Shipping & climate"]
     },
     "shop": {
       "title": "Shop",
-      "option1": "Best sellers",
-      "option2": "Rare finds",
-      "option3": "Gift cards"
+      "options": ["Best sellers", "Rare finds", "Gift cards"]
     },
     "studio": {
       "title": "Studio",
-      "option1": "About",
-      "option2": "Visit the greenhouse",
-      "option3": "Contact"
+      "options": ["About", "Visit the greenhouse", "Contact"]
     },
     "year": "© UNDERSTORY, EST. 2019",
     "location": "ROOTED IN PORTLAND, OREGON"

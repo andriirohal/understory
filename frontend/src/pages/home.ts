@@ -136,15 +136,15 @@ export function renderHome(plants: Plant[]): string {
           </div>
 
           <h3
-            data-i18n="philosophy.title1"
+            data-i18n="philosophy.titles.0"
           >
-            ${t("philosophy.title1")}
+            ${t("philosophy.titles.0")}
           </h3>
 
           <p
-            data-i18n="philosophy.description1"
+            data-i18n="philosophy.descriptions.0"
           >
-            ${t("philosophy.description1")}
+            ${t("philosophy.descriptions.0")}
           </p>
 
         </div>
@@ -156,15 +156,15 @@ export function renderHome(plants: Plant[]): string {
           </div>
 
           <h3
-            data-i18n="philosophy.title2"
+            data-i18n="philosophy.titles.1"
           >
-            ${t("philosophy.title2")}
+            ${t("philosophy.titles.1")}
           </h3>
 
           <p
-            data-i18n="philosophy.description2"
+            data-i18n="philosophy.descriptions.1"
           >
-            ${t("philosophy.description2")}
+            ${t("philosophy.descriptions.1")}
           </p>
 
         </div>
@@ -176,15 +176,15 @@ export function renderHome(plants: Plant[]): string {
           </div>
 
           <h3
-            data-i18n="philosophy.title3"
+            data-i18n="philosophy.titles.2"
           >
-            ${t("philosophy.title3")}
+            ${t("philosophy.titles.2")}
           </h3>
 
           <p
-            data-i18n="philosophy.description3"
+            data-i18n="philosophy.descriptions.2"
           >
-            ${t("philosophy.description3")}
+            ${t("philosophy.descriptions.2")}
           </p>
 
         </div>

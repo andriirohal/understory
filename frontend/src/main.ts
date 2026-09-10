@@ -184,7 +184,6 @@ function refreshHeader(): void {
 
     if (newCartCount) {
       newCartCount.classList.remove("is_loading");
-
       newCartCount.textContent = resolvedCartCount;
     }
   }
@@ -227,6 +226,12 @@ function refreshAccount(): void {
 
   initAccountPopover(app);
   updateAccountUI();
+}
+
+function waitForPaint(): Promise<void> {
+  return new Promise((resolve) => {
+    requestAnimationFrame(() => resolve());
+  });
 }
 
 async function repaintAfterLanguageChange(): Promise<void> {
@@ -303,7 +308,13 @@ async function repaintAfterLanguageChange(): Promise<void> {
         return;
       }
 
-      const plants = getCachedPlants() ?? (await getPlants());
+      const cached = getCachedPlants();
+
+      if (!cached) {
+        pageRoot.innerHTML = renderPageLoader();
+      }
+
+      const plants = cached ?? (await getPlants());
 
       pageRoot.innerHTML = await renderPlant(id, plants);
 
@@ -336,9 +347,15 @@ async function repaintAfterLanguageChange(): Promise<void> {
 
     const page = path.slice(1);
 
-    pageRoot.innerHTML = hasStaticContent(page)
-      ? renderStatic(page)
-      : renderNotFound();
+    if (hasStaticContent(page)) {
+      pageRoot.innerHTML = renderPageLoader();
+
+      await waitForPaint();
+
+      pageRoot.innerHTML = renderStatic(page);
+    } else {
+      pageRoot.innerHTML = renderNotFound();
+    }
 
     updateAccountUI();
   } catch (error) {
@@ -429,6 +446,10 @@ router
     try {
       const cached = getCachedPlants();
 
+      if (!cached) {
+        paint(`/plant/${id}`, renderPageLoader());
+      }
+
       const plants = cached ?? (await getPlants());
 
       const content = await renderPlant(id, plants);
@@ -489,6 +510,10 @@ router
 
       return;
     }
+
+    paint(`/${page}`, renderPageLoader());
+
+    await waitForPaint();
 
     paint(`/${page}`, renderStatic(page));
   })

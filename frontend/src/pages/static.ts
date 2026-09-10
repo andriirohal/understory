@@ -7,13 +7,13 @@ import {
 
 import { renderLogin, renderSignup } from "./auth";
 
-import { getLanguage, t } from "../i18n";
+import { getLanguage, getTranslationArray, t } from "../i18n";
 
 interface StaticContent {
   eyebrow: string;
   title: string;
   intro: string;
-  body: string[];
+  body: string;
 }
 
 const Content: Record<string, StaticContent> = {
@@ -21,43 +21,35 @@ const Content: Record<string, StaticContent> = {
     eyebrow: "static.care.eyebrow",
     title: "static.care.title",
     intro: "static.care.intro",
-    body: ["static.care.body1", "static.care.body2", "static.care.body3"],
+    body: "static.care.body",
   },
 
   about: {
     eyebrow: "static.about.eyebrow",
     title: "static.about.title",
     intro: "static.about.intro",
-    body: ["static.about.body1", "static.about.body2", "static.about.body3"],
+    body: "static.about.body",
   },
 
   guarantee: {
     eyebrow: "static.guarantee.eyebrow",
     title: "static.guarantee.title",
     intro: "static.guarantee.intro",
-    body: [
-      "static.guarantee.body1",
-      "static.guarantee.body2",
-      "static.guarantee.body3",
-    ],
+    body: "static.guarantee.body",
   },
 
   shipping: {
     eyebrow: "static.shipping.eyebrow",
     title: "static.shipping.title",
     intro: "static.shipping.intro",
-    body: [
-      "static.shipping.body1",
-      "static.shipping.body2",
-      "static.shipping.body3",
-    ],
+    body: "static.shipping.body",
   },
 
   contact: {
     eyebrow: "static.contact.eyebrow",
     title: "static.contact.title",
     intro: "static.contact.intro",
-    body: ["static.contact.body1", "static.contact.body2"],
+    body: "static.contact.body",
   },
 };
 
@@ -81,6 +73,8 @@ export function renderStatic(key: string): string {
   if (!content) {
     return "";
   }
+
+  const body: string[] = getTranslationArray(getLanguage(), content.body);
 
   return `
     <main class="static_page">
@@ -109,23 +103,132 @@ export function renderStatic(key: string): string {
 
         <div class="static_content_inner">
 
-          ${content.body
-            .map(
-              (paragraph, index) => `
-                <div class="static_paragraph">
+          ${
+            key === "contact"
+              ? `
+                <div class="contact_layout">
 
-                  <span class="static_paragraph_number">
-                    ${String(index + 1).padStart(2, "0")}
-                  </span>
+                  <div class="contact_details">
 
-                  <p>
-                    ${t(paragraph)}
-                  </p>
+                    <div class="contact_detail">
+
+                      <span class="contact_detail_label">
+                        ${t("static.contact.studio.label")}
+                      </span>
+
+                      <h2>
+                        ${t("static.contact.studio.title")}
+                      </h2>
+
+                      <p>
+                        ${t("static.contact.studio.description")}
+                      </p>
+
+                    </div>
+
+                    <div class="contact_detail">
+
+                      <span class="contact_detail_label">
+                        ${t("static.contact.emailInfo.label")}
+                      </span>
+
+                      <h2>
+                        ${t("static.contact.emailInfo.title")}
+                      </h2>
+
+                      <p>
+                        ${t("static.contact.emailInfo.description")}
+                      </p>
+
+                    </div>
+
+                    <div class="contact_detail">
+
+                      <span class="contact_detail_label">
+                        ${t("static.contact.developer.label")}
+                      </span>
+
+                      <h2>
+                        ${t("static.contact.developer.title")}
+                      </h2>
+
+                      <p>
+                        ${t("static.contact.developer.description")}
+                      </p>
+
+                      <div class="contact_social_links">
+
+                        <a
+                          href="https://github.com/andriirohal"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          GitHub
+                        </a>
+
+                        <a
+                          href="https://wa.me/420725904911"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          WhatsApp
+                        </a>
+
+                        <a href="mailto:andriirohal1@gmail.com">
+                          Email
+                        </a>
+
+                      </div>
+
+                    </div>
+
+                    <div class="contact_detail">
+
+                      <span class="contact_detail_label">
+                        ${t("static.contact.response.label")}
+                      </span>
+
+                      <h2>
+                        ${t("static.contact.response.title")}
+                      </h2>
+
+                      <p>
+                        ${t("static.contact.response.description")}
+                      </p>
+
+                      <span class="contact_detail_note">
+                        <svg class="note_icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1"/>
+                          <path d="M8 7v4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+                          <circle cx="8" cy="4.7" r="0.6" fill="currentColor"/>
+                        </svg>
+                        ${t("static.contact.response.note")}
+                      </span>
+
+                    </div>
+
+                  </div>
 
                 </div>
-              `,
-            )
-            .join("")}
+              `
+              : body
+                  .map(
+                    (paragraph, index) => `
+                      <div class="static_paragraph">
+
+                        <span class="static_paragraph_number">
+                          ${String(index + 1).padStart(2, "0")}
+                        </span>
+
+                        <p>
+                          ${paragraph}
+                        </p>
+
+                      </div>
+                    `,
+                  )
+                  .join("")
+          }
 
         </div>
 

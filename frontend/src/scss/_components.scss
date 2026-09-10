@@ -124,6 +124,10 @@
     text-transform: uppercase;
   }
 
+  label {
+    color: $ink_soft;
+  }
+
   input,
   select,
   textarea {
@@ -301,7 +305,7 @@
   @media (max-width: 550px) {
     grid-template-columns: 1fr;
 
-    gap: 18px;
+    gap: 25px;
   }
 }
 
@@ -456,7 +460,6 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 15px;
 
   margin-bottom: 38px;
@@ -520,21 +523,14 @@
   }
 }
 
-$qty-height: 45px;
-$qty-height-sm: 50px;
-$qty-btn: 45px;
-$qty-btn-h-sm: 40px;
-$radius-control: 14px;
-$radius-btn: 14px;
-
 .qty_control {
   display: inline-flex;
   align-items: center;
 
   width: 100%;
-  height: $qty-height;
+  height: $qty_height;
 
-  border-radius: $radius-control;
+  border-radius: $radius_control;
   border: 1px solid $line;
 
   background: $bg;
@@ -549,8 +545,8 @@ $radius-btn: 14px;
   align-items: center;
   justify-content: center;
 
-  width: $qty-btn;
-  height: $qty-btn;
+  width: $qty_btn;
+  height: $qty_btn;
 
   padding: 0;
 
@@ -591,7 +587,7 @@ $radius-btn: 14px;
   justify-content: center;
 
   min-width: 48px;
-  height: $qty-btn;
+  height: $qty_btn;
 
   padding: 0 8px;
 
@@ -929,14 +925,7 @@ $radius-btn: 14px;
   }
 
   #add_to_cart_btn {
-    min-height: $qty-height;
-  }
-}
-
-@media (max-width: 500px) {
-  .section_head h2 {
-    font-size: 30px;
-    line-height: 1.05;
+    min-height: $qty_height;
   }
 }
 
@@ -955,7 +944,7 @@ $radius-btn: 14px;
 @media (max-width: 380px) {
   .qty_btn,
   .qty_value {
-    height: $qty-btn-h-sm;
+    height: $qty_btn_h_sm;
   }
 }
 
@@ -1024,4 +1013,54 @@ $radius-btn: 14px;
   .plant_image:hover .plant_main_image {
     transform: none;
   }
+}
+
+.contact_social_links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.contact_social_links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  color: var(--text-muted, #6b6459);
+  border: 1px solid var(--border-color, #d8d2c4);
+  border-radius: 999px;
+  text-decoration: none;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.contact_social_links a:hover {
+  color: var(--text-dark, #2f2b24);
+  border-color: var(--text-dark, #2f2b24);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.contact_social_links a:active {
+  transform: scale(0.97);
+}
+
+.contact_detail_note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 20px;
+  font-size: 12.5px;
+  color: var(--text-muted, #6b6459);
+  opacity: 0.85;
+}
+
+.note_icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  opacity: 0.7;
 }

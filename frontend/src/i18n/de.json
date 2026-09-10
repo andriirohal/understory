@@ -198,12 +198,16 @@
   },
 
   "philosophy": {
-    "title1": "Gewachsen, nicht einfach genommen",
-    "description1": "Jede Pflanze entwickelt vor dem Versand ein gesundes Wurzelsystem",
-    "title2": "Klimabewusste Verpackung",
-    "description2": "Die Verpackung wird an jede Pflanze und ihren Transportweg angepasst",
-    "title3": "90-Tage-Wurzelgarantie",
-    "description3": "Wenn sich deine Pflanze innerhalb von 90 Tagen nicht einlebt, ersetzen wir sie"
+    "titles": [
+      "Gewachsen, nicht einfach genommen",
+      "Klimabewusste Verpackung",
+      "90-Tage-Wurzelgarantie"
+    ],
+    "descriptions": [
+      "Jede Pflanze entwickelt vor dem Versand ein gesundes Wurzelsystem",
+      "Die Verpackung wird an jede Pflanze und ihren Transportweg angepasst",
+      "Wenn sich deine Pflanze innerhalb von 90 Tagen nicht einlebt, ersetzen wir sie"
+    ]
   },
 
   "quote": {
@@ -215,45 +219,98 @@
     "care": {
       "eyebrow": "Pflegetagebuch",
       "title": "Notizen aus dem Gewächshaus",
-      "intro": "Praktische Tipps für gesunde und kräftige Pflanzen zu Hause",
-      "body1": "Seltene Aronstabgewächse reagieren empfindlich auf zu viel Wasser. Lass die Erde zwischen den Wassergaben gut abtrocknen und prüfe sie vor dem nächsten Gießen",
-      "body2": "Eine hohe Luftfeuchtigkeit ist besonders für tropische Pflanzen wichtig. Ein Luftbefeuchter, eine geschlossene Pflanzenvitrine oder eine dauerhaft feuchte Umgebung können für bessere Bedingungen sorgen",
-      "body3": "Neue Blätter sind ein gutes Zeichen für gesundes Wachstum. Wenn das Wachstum langsamer wird, überprüfe Licht, Gießverhalten und Luftfeuchtigkeit"
+      "intro": "Praktische Tipps, damit Ihre Pflanzen zu Hause gesund wachsen und gedeihen",
+      "body": [
+        "Seltene Aroiden reagieren empfindlich auf zu viel Wasser. Lassen Sie die Erde zwischen den Wassergaben gut trocknen und prüfen Sie immer ihren Zustand, bevor Sie erneut gießen",
+        "Luftfeuchtigkeit ist besonders für tropische Pflanzen wichtig. Ein Luftbefeuchter, ein geschlossenes Pflanzenregal oder eine konstant feuchte Umgebung können für bessere Bedingungen sorgen",
+        "Neue Blätter sind ein gutes Zeichen für gesundes Wachstum. Wenn das Wachstum langsamer wird, überprüfen Sie Licht, Gießroutine und Luftfeuchtigkeit in der Umgebung der Pflanze"
+      ]
     },
 
     "about": {
       "eyebrow": "Das Studio",
       "title": "Ein kleines Pflanzenhaus",
-      "intro": "Understory wurde 2019 gegründet und entwickelte sich zu einem Gewächshaus in der Nähe von Portland",
-      "body1": "Wir verkaufen Pflanzen erst, wenn sie ein gesundes und gut entwickeltes Wurzelsystem haben. Stecklinge werden niemals als etablierte Pflanzen verkauft",
-      "body2": "Jede Bestellung wird individuell für die jeweilige Pflanze verpackt. Dabei berücksichtigen wir Größe, Zustand und Transportweg, damit sie sicher ankommt",
-      "body3": "Wir kultivieren bewusst in kleinen Chargen, damit jede Pflanze vor dem Versand genügend Zeit, Aufmerksamkeit und die richtige Pflege erhält"
+      "intro": "Understory begann 2019 und entwickelte sich zu einem Gewächshaus in der Nähe von Portland",
+      "body": [
+        "Wir verkaufen Pflanzen erst, wenn sie ein gesundes und gut entwickeltes Wurzelsystem haben. Stecklinge werden niemals als etablierte Pflanzen verkauft",
+        "Jede Bestellung wird speziell für die jeweilige Pflanze verpackt. Größe, Zustand und Transportweg werden berücksichtigt, damit sie sicher ankommt",
+        "Wir ziehen unsere Pflanzen bewusst in kleinen Mengen auf, damit jede Pflanze vor dem Verlassen des Gewächshauses ausreichend Zeit, Aufmerksamkeit und Pflege erhält"
+      ]
     },
 
     "guarantee": {
       "eyebrow": "Unser Versprechen",
       "title": "90-Tage-Wurzelgarantie",
-      "intro": "Wenn sich deine Pflanze innerhalb von 90 Tagen nicht gut einlebt, helfen wir dir, die passende Lösung zu finden und sie wieder auf den richtigen Weg zu bringen",
-      "body1": "Kontaktiere unseren Support mit deiner Bestellnummer, damit wir die Details schnell prüfen und dir bei den nächsten Schritten helfen können",
-      "body2": "Die Garantie umfasst die Wurzelentwicklung und normalen Transportstress, einschließlich der natürlichen Anpassung an eine neue Umgebung",
-      "body3": "Falls ein Ersatz erforderlich ist, stammt dieser aus der nächsten verfügbaren Charge derselben oder einer vergleichbaren Pflanze"
+      "intro": "Wenn sich Ihre Pflanze innerhalb von 90 Tagen nicht richtig einlebt, helfen wir Ihnen, die passende Lösung zu finden und sie wieder auf den richtigen Weg zu bringen",
+      "body": [
+        "Kontaktieren Sie unseren Support mit Ihrer Bestellnummer, damit wir die Details schnell prüfen und Ihnen bei den nächsten Schritten helfen können",
+        "Die Garantie umfasst die Wurzelentwicklung und normalen Versandstress, einschließlich der natürlichen Anpassung der Pflanze an eine neue Umgebung",
+        "Falls ein Ersatz erforderlich ist, stammt dieser aus der nächsten verfügbaren Charge derselben oder einer vergleichbaren Pflanze"
+      ]
     },
 
     "shipping": {
       "eyebrow": "Versand",
-      "title": "Versand mit Blick aufs Klima",
-      "intro": "Jede Bestellung wird mit Blick auf die Pflanze, das Wetter und den gesamten Transportweg vorbereitet, um den Stress während des Versands zu reduzieren",
-      "body1": "Wir versenden von Montag bis Mittwoch, damit die Pflanzen am Wochenende möglichst wenig Zeit in Lagern oder Transportzentren verbringen",
-      "body2": "Der saisonale Schutz wird passend zu Zielort, Wetter und aktuellen Versandbedingungen ausgewählt",
-      "body3": "Bestellungen ab $150 werden kostenlos versendet. Für kleinere Bestellungen fällt eine Versandpauschale von $18 an"
+      "title": "Klimabewusster Versand",
+      "intro": "Jede Bestellung wird mit Blick auf die Pflanze, das Wetter und den gesamten Transportweg vorbereitet, um den Versandstress zu reduzieren",
+      "body": [
+        "Wir versenden von Montag bis Mittwoch, damit die Pflanzen am Wochenende möglichst wenig Zeit in Lagern oder Versandzentren verbringen",
+        "Der saisonale Schutz wird abhängig vom Zielort, Wetter und den aktuellen Versandbedingungen ausgewählt",
+        "Bestellungen über 150 $ werden kostenlos versendet. Für kleinere Bestellungen berechnen wir eine Versandpauschale von 18 $"
+      ]
     },
 
     "contact": {
       "eyebrow": "Kontakt",
-      "title": "Sprich mit uns",
-      "intro": "Fragen zu deiner Bestellung, zur Pflanzenpflege oder zu deiner Sammlung? Wir helfen dir gerne",
-      "body1": "Dies ist derzeit eine Frontend-Demo, daher ist das Kontaktformular noch nicht mit einem Live-Nachrichtendienst verbunden",
-      "body2": "Bei Fragen zu einer Bestellung gib bitte deine Bestellnummer an, damit wir die passenden Details schnell finden können"
+      "title": "Wir freuen uns, von Ihnen zu hören.",
+      "intro": "Haben Sie eine Frage zu Ihren Pflanzen, einer Bestellung oder etwas anderem? Kontaktieren Sie uns.",
+
+      "studio": {
+        "label": "Studio",
+        "title": "Portland, Oregon",
+        "description": "Unser Gewächshaus und Studio befinden sich in der Nähe von Portland, wo wir jede Pflanze anbauen und für ihre Reise vorbereiten."
+      },
+
+      "emailInfo": {
+        "label": "E-Mail",
+        "title": "hello@understory.com",
+        "description": "Bei Fragen zu Pflanzen, Bestellungen, Pflege oder anderen Anliegen können Sie uns gerne schreiben. Wir melden uns bei Ihnen."
+      },
+
+      "developer": {
+        "label": "Website",
+        "title": "Entwickelt von Andrii Rohal",
+        "description": "Die Understory-Website wurde von Grund auf als individuelles Erlebnis für einen modernen Pflanzenladen konzipiert und entwickelt."
+      },
+
+      "response": {
+        "label": "Antwortzeit",
+        "title": "Innerhalb von 1–2 Werktagen",
+        "description": "Wir antworten normalerweise während unserer Gewächshauszeiten, Montag bis Freitag.",
+        "note": "Danke für deine Geduld — wir antworten jedem persönlich, denn uns ist jede Pflanze und jede Frage wichtig."
+      },
+
+      "form": {
+        "label": "Nachricht senden",
+        "title": "Lassen Sie uns sprechen",
+        "description": "Haben Sie eine Frage zu einer Pflanze, einer Bestellung oder etwas anderem? Senden Sie uns eine Nachricht und wir melden uns bei Ihnen."
+      },
+
+      "name": "Name",
+      "email": "E-Mail",
+      "message": "Nachricht",
+      "send": "Nachricht senden",
+
+      "errors": {
+        "nameRequired": "Name ist erforderlich.",
+        "nameShort": "Der Name muss mindestens 2 Zeichen lang sein.",
+        "nameLong": "Der Name ist zu lang.",
+        "emailRequired": "E-Mail ist erforderlich.",
+        "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+        "messageRequired": "Nachricht ist erforderlich.",
+        "messageShort": "Die Nachricht muss mindestens 10 Zeichen lang sein.",
+        "messageLong": "Die Nachricht ist zu lang."
+      }
     }
   },
 
@@ -261,21 +318,15 @@
     "description": "Ein kleines Pflanzenhaus für alle, die bereit sind, auf das richtige Exemplar zu warten",
     "care": {
       "title": "Pflege",
-      "option1": "Pflegetagebuch",
-      "option2": "Wurzelgarantie",
-      "option3": "Versand & Klima"
+      "options": ["Pflegetagebuch", "Wurzelgarantie", "Versand & Klima"]
     },
     "shop": {
       "title": "Shop",
-      "option1": "Bestseller",
-      "option2": "Seltene Pflanzen",
-      "option3": "Geschenkkarten"
+      "options": ["Bestseller", "Seltene Pflanzen", "Geschenkkarten"]
     },
     "studio": {
       "title": "Studio",
-      "option1": "Über uns",
-      "option2": "Gewächshaus besuchen",
-      "option3": "Kontakt"
+      "options": ["Über uns", "Gewächshaus besuchen", "Kontakt"]
     },
     "year": "© UNDERSTORY, GEGR. 2019",
     "location": "VERWURZELT IN PORTLAND, OREGON"

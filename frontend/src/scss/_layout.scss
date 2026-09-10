@@ -166,7 +166,7 @@ header.site_header {
 
   @media (max-width: 480px) {
     p {
-      font-size: 13px;
+      font-size: 12px;
     }
 
     .hero_actions {
@@ -204,7 +204,7 @@ header.site_header {
   @media (max-width: 480px) {
     min-height: 120px;
     max-width: 300px;
-    margin: 0 0 15px;
+    margin: 0 0 10px;
   }
 }
 
@@ -226,7 +226,7 @@ header.site_header {
   }
 
   @media (max-width: 480px) {
-    font-size: 37px;
+    font-size: 35px;
   }
 }
 
@@ -431,7 +431,7 @@ footer.site_footer {
     display: flex;
     flex-direction: column;
 
-    gap: 5px;
+    gap: 8px;
 
     a {
       color: $ink;
@@ -1487,8 +1487,6 @@ footer.site_footer {
 
   gap: 15px;
 
-  flex-wrap: wrap;
-
   margin-bottom: 38px;
   padding-bottom: 18px;
 
@@ -1508,6 +1506,25 @@ footer.site_footer {
 
     &:hover {
       color: $ochre;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .section_head {
+    h2 {
+      font-size: 25px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .section_head {
+    gap: 10px;
+    flex-direction: column;
+
+    h2 {
+      font-size: 23px;
     }
   }
 }

@@ -5,7 +5,6 @@ $moss_pale: #b8c4a9;
 $bg: #f1efe3;
 $bg_panel: #e7e3d2;
 $ink: #20241a;
-$ink_soft: #5a6350;
 $ochre: #c0842b;
 $clay: #b0673f;
 $line: #cfc9b4;
@@ -13,6 +12,14 @@ $error: #a13d2b;
 $error_bg: #f4e2dc;
 $success: #4a6b3a;
 $text: #263126;
+$moss: #33452f;
+$ink_soft: #5a6350;
+
+$qty_btn: 42px;
+$qty_height: 45px;
+$qty_btn_h_sm: 40px;
+$radius_control: 14px;
+$radius_btn: 14px;
 
 $font_display: "Cormorant Garamond", serif;
 $font_body: "Work Sans", sans-serif;
@@ -26,22 +33,22 @@ $gutter_mobile: 30px;
 
 $ease: cubic-bezier(0.4, 0, 0.2, 1);
 
-$chip-accent: #687052;
-$chip-accent-strong: #50583e;
-$chip-accent-soft: #e6e7dc;
-$chip-accent-ink: #3f4532;
+$chip_accent: #687052;
+$chip_accent_strong: #50583e;
+$chip_accent_soft: #e6e7dc;
+$chip_accent_ink: #3f4532;
 $accent: #5a6350;
 $danger: #a34a3f;
 $paper: #f5f4ed;
 
 $surface: #f1efe3;
-$surface-muted: #e9e6d9;
+$surface_muted: #e9e6d9;
 $border: #d6d2c2;
-$border-strong: #bdb8a6;
+$border_strong: #bdb8a6;
 $ink: #34332d;
 $ink-muted: #777367;
 
-$radius-pill: 999px;
+$radius_pill: 999px;
 $ease: cubic-bezier(0.4, 0, 0.2, 1);
 $dur: 180ms;
 

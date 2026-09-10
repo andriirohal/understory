@@ -8,9 +8,9 @@ export { mountCheckout } from "./order";
 export type { Plant } from "./shop";
 export {
   renderStatic,
+  hasStaticContent,
   initAccountPopover,
   initAccountAuth,
-  hasStaticContent,
 } from "./static";
 export {
   renderAccount,
