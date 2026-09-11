@@ -52,7 +52,10 @@ export function renderHeader(activePath: string): string {
         class="logo"
       >
         ${LEAF_SVG}
-        Understory
+        <span
+          class="logo_text">
+          Understory
+        <span/>
       </a>
 
       <nav class="site_nav">

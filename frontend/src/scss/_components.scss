@@ -76,6 +76,10 @@
 
   transition: color 0.15s $ease;
 
+  @media (max-width: 480px) {
+    font-size: 10px;
+  }
+
   &:hover {
     color: $ink;
   }

@@ -14,7 +14,7 @@
     "about": "Über",
     "rarePlants": "Raritäten",
     "account": "Konto",
-    "bag": "Warenkorb",
+    "bag": "Korb",
     "shopIn": "Shoppen in",
     "accountPopover": {
       "account": "Konto",
@@ -219,9 +219,9 @@
       "title": "Notizen aus dem Gewächshaus",
       "intro": "Praktische Tipps, damit Ihre Pflanzen zu Hause gesund wachsen und gedeihen",
       "body": [
-        "Seltene Aroiden reagieren empfindlich auf zu viel Wasser. Lassen Sie die Erde zwischen den Wassergaben gut trocknen und prüfen Sie immer ihren Zustand, bevor Sie erneut gießen",
-        "Luftfeuchtigkeit ist besonders für tropische Pflanzen wichtig. Ein Luftbefeuchter, ein geschlossenes Pflanzenregal oder eine konstant feuchte Umgebung können für bessere Bedingungen sorgen",
-        "Neue Blätter sind ein gutes Zeichen für gesundes Wachstum. Wenn das Wachstum langsamer wird, überprüfen Sie Licht, Gießroutine und Luftfeuchtigkeit in der Umgebung der Pflanze"
+        "Seltene Aroiden reagieren empfindlich auf zu viel Wasser. Lassen Sie die Erde zwischen dem Gießen gut trocknen.",
+        "Luftfeuchtigkeit ist besonders für tropische Pflanzen wichtig. Ein Luftbefeuchter oder eine konstant feuchte Umgebung schaffen bessere Bedingungen.",
+        "Neue Blätter zeigen gesundes Wachstum. Bei langsamerem Wachstum prüfen Sie Licht, Gießen und Luftfeuchtigkeit."
       ]
     },
 
@@ -232,7 +232,7 @@
       "body": [
         "Wir verkaufen Pflanzen erst, wenn sie ein gesundes und gut entwickeltes Wurzelsystem haben. Stecklinge werden niemals als etablierte Pflanzen verkauft",
         "Jede Bestellung wird speziell für die jeweilige Pflanze verpackt. Größe, Zustand und Transportweg werden berücksichtigt, damit sie sicher ankommt",
-        "Wir ziehen unsere Pflanzen bewusst in kleinen Mengen auf, damit jede Pflanze vor dem Verlassen des Gewächshauses ausreichend Zeit, Aufmerksamkeit und Pflege erhält"
+        "Wir ziehen unsere Pflanzen bewusst in kleinen Mengen auf, damit jede Pflanze ausreichend Zeit, Aufmerksamkeit und Pflege erhält."
       ]
     },
 

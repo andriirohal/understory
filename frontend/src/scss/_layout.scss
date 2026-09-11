@@ -41,6 +41,14 @@ header.site_header {
   line-height: 1;
   white-space: nowrap;
 
+  @media (max-width: 480px) {
+    font-size: 22px;
+
+    .logo_text {
+      display: none;
+    }
+  }
+
   svg {
     width: 22px;
     height: 22px;
@@ -95,12 +103,8 @@ header.site_header {
 
   flex-shrink: 0;
 
-  @media (max-width: 640px) {
-    gap: 12px;
-
-    .icon_btn:first-child {
-      display: none;
-    }
+  @media (max-width: 480px) {
+    gap: 15px;
   }
 }
 
@@ -236,6 +240,10 @@ header.site_header {
   color: $ink_soft;
   font-size: 15px;
   line-height: 1.5;
+
+  @media (max-width: 480px) {
+    margin: 0 0 20px;
+  }
 }
 
 .hero_art {
@@ -556,6 +564,10 @@ footer.site_footer {
 
   transition: color 150ms $ease;
 
+  @media (max-width: 480px) {
+    font-size: 10px;
+  }
+
   &::-webkit-details-marker {
     display: none;
   }
@@ -584,6 +596,11 @@ footer.site_footer {
   height: 15px;
 
   flex-shrink: 0;
+
+  @media (max-width: 480px) {
+    width: 13px;
+    height: 13px;
+  }
 }
 
 .lang_code {
