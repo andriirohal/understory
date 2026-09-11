@@ -47,7 +47,7 @@ func UniqueHandler(ctx *gin.Context) {
     if errors.As(err.Err, &pgErr) && pgErr.Code == "23505" && pgErr.ConstraintName == "users_email_unique" {
       if !ctx.Writer.Written() {
         ctx.JSON(409, gin.H {
-          "error": "An account with this email already exists",
+          "error": "An account with this email address already exists",
         });
       };
       return;

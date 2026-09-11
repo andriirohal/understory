@@ -61,11 +61,12 @@
     "signupHintShort": "8+ characters. Your data stays private",
     "alreadyHaveAccount": "Already have an account?",
     "errors": {
-      "emailError": "We couldn't find an account with this email",
+      "emailError": "We couldn't find an account with this email address",
       "passwordError": "We couldn't verify your password",
+      "nameMaxLength": "Name must be 20 characters or fewer",
       "invalidEmail": "Please enter a valid email address",
       "passwordLength": "Password must be 8–100 characters",
-      "emailAlreadyExists": "An account with this email already exists"
+      "emailAlreadyExists": "An account with this email address already exists"
     }
   },
 

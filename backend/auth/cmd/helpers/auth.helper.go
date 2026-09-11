@@ -15,12 +15,14 @@ import (
   "golang.org/x/crypto/bcrypt"
 );
 
-func IsValidName(name string) string {
-  if utf8.RuneCountInString(name) == 0 || name != strings.TrimSpace(name) {
-    return "";
+func IsValidName(name string) bool {
+  if name != strings.TrimSpace(name) {
+    return false;
   };
 
-  return name;
+  length := utf8.RuneCountInString(name);
+
+  return length >= 1 && length <= 20;
 };
 
 func IsValidPassword(password string) string {
@@ -68,8 +70,8 @@ func IssueAuthentication(payload models.UserPayload) (models.Authentication, err
   return authentication, nil;
 };
 
-func ScanUserBase(row pgx.Row) (models.UserBase, error) {
-  var user models.UserBase;
+func ScanUserRecord(row pgx.Row) (models.UserRecord, error) {
+  var user models.UserRecord;
 
   err := row.Scan(
     &user.UserId,
@@ -89,14 +91,13 @@ func ScanUserId(row pgx.Row) (string, error) {
   return userId, err;
 };
 
-func ScanUser(row pgx.Row) (models.User, error) {
-  var user models.User;
+func ScanUserBase(row pgx.Row) (models.UserBase, error) {
+  var user models.UserBase;
 
   err := row.Scan(
     &user.UserId,
     &user.Name,
     &user.Email,
-    &user.Password,
     &user.RefreshToken,
     &user.CreatedAt,
   );
@@ -104,14 +105,28 @@ func ScanUser(row pgx.Row) (models.User, error) {
   return user, err;
 };
 
-func ScanUserRecord(row pgx.Row) (models.UserRecord, error) {
-  var user models.UserRecord;
+func ScanUserRow(row pgx.Row) (models.UserRow, error) {
+  var user models.UserRow;
 
   err := row.Scan(
     &user.UserId,
     &user.Name,
     &user.Email,
     &user.RefreshToken,
+    &user.CreatedAt,
+  );
+
+  return user, err;
+};
+
+func ScanUserModel(row pgx.Row) (models.UserModel, error) {
+  var user models.UserModel;
+
+  err := row.Scan(
+    &user.UserId,
+    &user.Name,
+    &user.Email,
+    &user.Password,
     &user.CreatedAt,
   );
 

@@ -1139,9 +1139,9 @@ export function initAccountUI(): void {
     });
   });
 
-  window.addEventListener("language-changed", refreshAccountLanguage);
+  window.addEventListener("languagechanged", refreshAccountLanguage);
 
-  window.addEventListener("order-changed", () => {
+  window.addEventListener("orderchanged", () => {
     void refreshAccountSummary();
   });
 }

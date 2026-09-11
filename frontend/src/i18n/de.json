@@ -61,11 +61,12 @@
     "signupHintShort": "8+ Zeichen. Deine Daten bleiben privat",
     "alreadyHaveAccount": "Du hast bereits ein Konto?",
     "errors": {
-      "emailError": "Konto mit dieser E-Mail nicht gefunden",
-      "passwordError": "Passwort konnte nicht überprüft werden",
-      "invalidEmail": "Bitte gültige E-Mail eingeben",
-      "passwordLength": "Passwort: 8–100 Zeichen",
-      "emailAlreadyExists": "Konto mit dieser E-Mail existiert bereits"
+      "emailError": "Wir konnten kein Konto mit dieser E-Mail-Adresse finden",
+      "passwordError": "Dein Passwort konnte nicht überprüft werden",
+      "nameMaxLength": "Der Name darf höchstens 20 Zeichen lang sein",
+      "invalidEmail": "Bitte gib eine gültige E-Mail-Adresse ein",
+      "passwordLength": "Das Passwort muss 8–100 Zeichen lang sein",
+      "emailAlreadyExists": "Ein Konto mit dieser E-Mail-Adresse existiert bereits"
     }
   },
 

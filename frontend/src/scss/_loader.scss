@@ -49,17 +49,16 @@
   justify-content: center;
   gap: 14px;
 
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
 
   text-align: center;
 
-  p {
-    color: $ink_soft;
-
-    font-family: $font_mono;
-    font-size: 12px;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
+  p { 
+    color: $ink_soft; 
+    font-family: $font_mono; 
+    font-size: 12px; 
+    letter-spacing: 0.03em; 
+    text-transform: uppercase; 
   }
 }
 

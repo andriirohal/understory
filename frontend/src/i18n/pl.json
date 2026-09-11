@@ -61,11 +61,12 @@
     "signupHintShort": "8+ znaków. Twoje dane są prywatne",
     "alreadyHaveAccount": "Masz już konto?",
     "errors": {
-      "emailError": "Nie znaleziono konta z tym e-mailem",
-      "passwordError": "Nie udało się sprawdzić hasła",
-      "invalidEmail": "Wprowadź prawidłowy e-mail",
-      "passwordLength": "Hasło: 8–100 znaków",
-      "emailAlreadyExists": "Konto z tym e-mailem już istnieje"
+      "emailError": "Nie znaleźliśmy konta z tym adresem e-mail",
+      "passwordError": "Nie udało się zweryfikować hasła",
+      "nameMaxLength": "Imię może mieć maks. 20 znaków",
+      "invalidEmail": "Wprowadź prawidłowy adres e-mail",
+      "passwordLength": "Hasło musi mieć 8–100 znaków",
+      "emailAlreadyExists": "Konto z tym adresem e-mail już istnieje"
     }
   },
 

@@ -48,22 +48,17 @@ function clearSession(): void {
 
 function translateAuthError(message: string): string {
   const errorMap: Record<string, string> = {
-    "We couldn't find an account with this email":
-      "auth.errors.emailError",
+    "We couldn't find an account with this email address": "auth.errors.emailError",
 
-    "We couldn't verify your password":
-      "auth.errors.passwordError",
+    "We couldn't verify your password": "auth.errors.passwordError",
 
-    "Name must be 1–20 characters":
-      "auth.errors.nameMaxLength",
+    "Name must be 20 characters or less": "auth.errors.nameMaxLength",
 
-    "Please enter a valid email address":
-      "auth.errors.invalidEmail",
+    "Please enter a valid email address": "auth.errors.invalidEmail",
 
-    "Password must be 8–100 characters":
-      "auth.errors.passwordLength",
+    "Password must be 8–100 characters": "auth.errors.passwordLength",
 
-    "An account with this email already exists":
+    "An account with this email address already exists":
       "auth.errors.emailAlreadyExists",
   };
 

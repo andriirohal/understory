@@ -1,49 +1,55 @@
 package services
 
 import (
-  "Auth/cmd/db"
-  "Auth/cmd/helpers"
-  "Auth/cmd/models"
+	"Auth/cmd/db"
+	"Auth/cmd/helpers"
+	"Auth/cmd/models"
 
-  "context"
-  "errors"
-  "github.com/jackc/pgx/v5"
-  "golang.org/x/crypto/bcrypt"
+	"context"
+	"errors"
+	"github.com/jackc/pgx/v5"
+	"golang.org/x/crypto/bcrypt"
 );
 
-func SignUpUser(ctx context.Context, input models.UserInput) (models.AuthResponse, error) {
-  name := helpers.IsValidName(input.Name);
-
-  if name == "" {
-    return models.AuthResponse{}, errors.New("Name is required");
+func SignUpUser(ctx context.Context, input models.UserInput) (models.UserResponse, error) {
+  if !helpers.IsValidName(input.Name) {
+    return models.UserResponse{}, errors.New("Name must be 20 characters or less");
   };
 
   email := helpers.IsValidEmail(input.Email);
 
   if email == "" {
-    return models.AuthResponse{}, errors.New("Please enter a valid email");
+    return models.UserResponse{}, errors.New("Please enter a valid email address");
   };
 
   password := helpers.IsValidPassword(input.Password);
 
   if password == "" {
-    return models.AuthResponse{}, errors.New("Password must be 8–100 characters");
+    return models.UserResponse{}, errors.New("Password must be 8–100 characters");
   };
 
   hashedPassword, err := helpers.HashPassword(password);
 
   if err != nil {
-    return models.AuthResponse{}, errors.New("An unexpected error occurred");
+    return models.UserResponse{}, err;
   };
 
-  row := db.DB.QueryRow(ctx, `INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING id, "createdAt"`,
-    name, email, hashedPassword,
+  tx, err := db.DB.Begin(ctx);
+
+  if err != nil {
+    return models.UserResponse{}, err;
+  };
+
+  defer tx.Rollback(ctx);
+
+  row := tx.QueryRow(ctx, `INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING id, "createdAt"`,
+    input.Name, email, hashedPassword,
   );
 
   user, err := helpers.ScanUserBase(row);
 
   if err != nil {
-    return models.AuthResponse{}, err;
+    return models.UserResponse{}, err;
   };
 
   payload := models.UserPayload{
@@ -54,66 +60,77 @@ func SignUpUser(ctx context.Context, input models.UserInput) (models.AuthRespons
   authentication, err := helpers.IssueAuthentication(payload);
 
   if err != nil {
-    return models.AuthResponse{}, err;
+    return models.UserResponse{}, err;
   };
 
   hashedRefreshToken, err := helpers.HashRefreshToken(authentication.RefreshToken);
 
   if err != nil {
-    return models.AuthResponse{}, err;
+    return models.UserResponse{}, err;
   };
 
-  _, err = helpers.ScanUserBase(db.DB.QueryRow(ctx, `UPDATE users SET "refreshToken" = $2 WHERE id = $1 RETURNING id, "createdAt"`,
+  _, err = tx.Exec(ctx, `UPDATE users SET "refreshToken" = $2 WHERE id = $1`,
     user.UserId, hashedRefreshToken,
-    ),
   );
 
   if err != nil {
-    return models.AuthResponse{}, err;
+    return models.UserResponse{}, err;
   };
 
-  response := models.AuthResponse{
+  if err := tx.Commit(ctx); err != nil {
+    return models.UserResponse{}, err;
+  };
+
+  response := models.UserResponse{
     UserId: user.UserId,
-    Name: name,
+    Name: input.Name,
     Email: email,
     AccessToken: authentication.AccessToken,
-    RefreshToken: authentication.RefreshToken,
+    RefreshToken: &authentication.RefreshToken,
     CreatedAt: user.CreatedAt,
   };
 
   return response, nil;
 };
 
-func LogInUser(ctx context.Context, input models.AuthInput) (models.AuthResponse, error) {
+func LogInUser(ctx context.Context, input models.AuthInput) (models.UserResponse, error) {
   email := helpers.IsValidEmail(input.Email);
     
   if email == "" {
-    return models.AuthResponse{}, errors.New("Please enter a valid email");
+    return models.UserResponse{}, errors.New("Please enter a valid email address");
   };
 
   password := helpers.IsValidPassword(input.Password);
 
   if password == "" {
-    return models.AuthResponse{}, errors.New("Password must be 8–100 characters");
+    return models.UserResponse{}, errors.New("Password must be 8–100 characters");
   };
 
-  user, err := helpers.ScanUser(db.DB.QueryRow(ctx, `SELECT id, name, email, password, "refreshToken", "createdAt" FROM users WHERE email = $1`,
+  tx, err := db.DB.Begin(ctx);
+
+  if err != nil {
+    return models.UserResponse{}, err;
+  };
+
+  defer tx.Rollback(ctx);
+
+  user, err := helpers.ScanUserModel(tx.QueryRow(ctx, `SELECT id, name, email, password, "createdAt" FROM users WHERE email = $1`,
     email,
     ),
   );
 
   if err != nil {
     if errors.Is(err, pgx.ErrNoRows) {
-      return models.AuthResponse{}, errors.New("We couldn't find an account with this email");
+      return models.UserResponse{}, errors.New("We couldn't find an account with this email address");
     };
 
-    return models.AuthResponse{}, err;
+    return models.UserResponse{}, err;
   };
 
   err = bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(password));
 
   if err != nil {
-    return models.AuthResponse{}, errors.New("We couldn't verify your password");
+    return models.UserResponse{}, errors.New("We couldn't verify your password");
   };
 
   payload := models.UserPayload{
@@ -124,30 +141,33 @@ func LogInUser(ctx context.Context, input models.AuthInput) (models.AuthResponse
   authentication, err := helpers.IssueAuthentication(payload);
 
   if err != nil {
-    return models.AuthResponse{}, err;
+    return models.UserResponse{}, err;
   };
 
   hashedRefreshToken, err := helpers.HashRefreshToken(authentication.RefreshToken);
 
   if err != nil {
-    return models.AuthResponse{}, err;
+    return models.UserResponse{}, err;
   };
 
-  _, err = helpers.ScanUserBase(db.DB.QueryRow(ctx, `UPDATE users SET "refreshToken" = $2 WHERE id = $1 RETURNING id, "createdAt"`,
+  _, err = tx.Exec(ctx, `UPDATE users SET "refreshToken" = $2 WHERE id = $1`,
     payload.UserId, hashedRefreshToken,
-    ),
   );
 
   if err != nil {
-    return models.AuthResponse{}, err;
+    return models.UserResponse{}, err;
   };
 
-  response := models.AuthResponse{
+  if err := tx.Commit(ctx); err != nil {
+    return models.UserResponse{}, err;
+  };
+
+  response := models.UserResponse{
     UserId: user.UserId,
     Name: user.Name,
     Email: user.Email,
     AccessToken: authentication.AccessToken,
-    RefreshToken: authentication.RefreshToken,
+    RefreshToken: &authentication.RefreshToken,
     CreatedAt: user.CreatedAt,
   };
 
@@ -165,7 +185,15 @@ func RotateUserTokens(ctx context.Context, refreshToken string) (models.Authenti
     return models.Authentication{}, errors.New("Invalid refresh token");
   };
 
-  user, err := helpers.ScanUserRecord(db.DB.QueryRow(ctx, `SELECT id, name, email, "refreshToken", "createdAt" FROM users WHERE id = $1`,
+  tx, err := db.DB.Begin(ctx);
+  
+  if err != nil {
+    return models.Authentication{}, err;
+  };
+
+  defer tx.Rollback(ctx);
+
+  user, err := helpers.ScanUserRow(tx.QueryRow(ctx, `SELECT id, name, email, "refreshToken", "createdAt" FROM users WHERE id = $1 FOR UPDATE`,
     decoded.UserId,
     ),
   );
@@ -191,28 +219,31 @@ func RotateUserTokens(ctx context.Context, refreshToken string) (models.Authenti
     Email: user.Email,
   };
 
-  autentication, err := helpers.IssueAuthentication(payload);
+  authentication, err := helpers.IssueAuthentication(payload);
 
   if err != nil {
     return models.Authentication{}, err;
   };
 
-  hashedRefreshToken, err := helpers.HashRefreshToken(autentication.RefreshToken);
+  hashedRefreshToken, err := helpers.HashRefreshToken(authentication.RefreshToken);
 
   if err != nil {
     return models.Authentication{}, err;
   };
 
-  _, err = helpers.ScanUserBase(db.DB.QueryRow(ctx, `UPDATE users SET "refreshToken" = $2 WHERE id = $1 RETURNING id, "createdAt"`,
+  _, err = tx.Exec(ctx, `UPDATE users SET "refreshToken" = $2 WHERE id = $1`,
     user.UserId, hashedRefreshToken,
-    ),
   );
 
   if err != nil {
     return models.Authentication{}, err;
   };
 
-  return autentication, nil;
+  if err := tx.Commit(ctx); err != nil {
+    return models.Authentication{}, err;
+  };
+
+  return authentication, nil;
 };
 
 func LogOutUser(ctx context.Context, refreshToken string) (string, error) {
@@ -262,10 +293,6 @@ func GetUserSummary(ctx context.Context, userId string) (models.UserSummary, err
   );
 
   if err != nil {
-    if errors.Is(err, pgx.ErrNoRows) {
-      return models.UserSummary{}, errors.New("User not found");
-    };
-
     return models.UserSummary{}, err;
   };
 

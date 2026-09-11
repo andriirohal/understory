@@ -104,7 +104,7 @@ func SignUpUser(ctx *gin.Context) {
 	  return;
   };
 
-  setRefreshCookie(ctx, user.RefreshToken);
+  setRefreshCookie(ctx, *user.RefreshToken);
 
   ctx.JSON(200, gin.H {
     "userId": user.UserId,
@@ -134,7 +134,7 @@ func LogInUser(ctx *gin.Context) {
 	  return;
   };
 
-  setRefreshCookie(ctx, user.RefreshToken);
+  setRefreshCookie(ctx, *user.RefreshToken);
 
   ctx.JSON(200, gin.H {
     "userId": user.UserId,
