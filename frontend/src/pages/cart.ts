@@ -3,10 +3,7 @@ import { getCart, updateCart, removeFromCart } from "../api";
 import { getAccessToken } from "../api/authState";
 import { t } from "../i18n";
 import { router } from "../routes";
-
-const FREE_SHIPPING_THRESHOLD = 100;
-const SHIPPING_COST = 10;
-const TAX_RATE = 0.2;
+import { FREE_SHIPPING_THRESHOLD, SHIPPING_COST, TAX_RATE } from "../utils";
 
 type CartLine = {
   id: string;

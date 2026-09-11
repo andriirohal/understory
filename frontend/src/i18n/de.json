@@ -61,14 +61,11 @@
     "signupHintShort": "8+ Zeichen. Deine Daten bleiben privat",
     "alreadyHaveAccount": "Du hast bereits ein Konto?",
     "errors": {
-      "emailError": "Wir konnten kein Konto mit dieser E-Mail-Adresse finden",
-      "passwordError": "Dein Passwort konnte nicht überprüft werden",
-      "nameRequired": "Name ist erforderlich",
-      "nameMaxLength": "Der Name darf höchstens 20 Zeichen lang sein",
-      "invalidEmail": "Bitte gib eine gültige E-Mail-Adresse ein",
-      "passwordLength": "Das Passwort muss 8–100 Zeichen lang sein",
-      "userNotFound": "Benutzer nicht gefunden",
-      "emailAlreadyExists": "Ein Konto mit dieser E-Mail-Adresse existiert bereits"
+      "emailError": "Konto mit dieser E-Mail nicht gefunden",
+      "passwordError": "Passwort konnte nicht überprüft werden",
+      "invalidEmail": "Bitte gültige E-Mail eingeben",
+      "passwordLength": "Passwort: 8–100 Zeichen",
+      "emailAlreadyExists": "Konto mit dieser E-Mail existiert bereits"
     }
   },
 
@@ -299,18 +296,7 @@
       "name": "Name",
       "email": "E-Mail",
       "message": "Nachricht",
-      "send": "Nachricht senden",
-
-      "errors": {
-        "nameRequired": "Name ist erforderlich.",
-        "nameShort": "Der Name muss mindestens 2 Zeichen lang sein.",
-        "nameLong": "Der Name ist zu lang.",
-        "emailRequired": "E-Mail ist erforderlich.",
-        "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
-        "messageRequired": "Nachricht ist erforderlich.",
-        "messageShort": "Die Nachricht muss mindestens 10 Zeichen lang sein.",
-        "messageLong": "Die Nachricht ist zu lang."
-      }
+      "send": "Nachricht senden"
     }
   },
 

@@ -2,10 +2,7 @@ import { getCart, addOrder } from "../api";
 
 import { t } from "../i18n";
 import { clearPlantsCache } from "../main";
-
-const FREE_SHIPPING_THRESHOLD = 100;
-const SHIPPING_COST = 10;
-const TAX_RATE = 0.2;
+import { FREE_SHIPPING_THRESHOLD, SHIPPING_COST, TAX_RATE } from "../utils";
 
 let orderRequestPending = false;
 

@@ -61,14 +61,11 @@
     "signupHintShort": "8+ characters. Your data stays private",
     "alreadyHaveAccount": "Already have an account?",
     "errors": {
-      "emailError": "We couldn't find an account with this email address",
+      "emailError": "We couldn't find an account with this email",
       "passwordError": "We couldn't verify your password",
-      "nameRequired": "Name is required",
-      "nameMaxLength": "Name must be 20 characters or fewer",
       "invalidEmail": "Please enter a valid email address",
       "passwordLength": "Password must be 8–100 characters",
-      "userNotFound": "User not found",
-      "emailAlreadyExists": "An account with this email address already exists"
+      "emailAlreadyExists": "An account with this email already exists"
     }
   },
 
@@ -299,18 +296,7 @@
       "name": "Name",
       "email": "Email",
       "message": "Message",
-      "send": "Send message",
-
-      "errors": {
-        "nameRequired": "Name is required.",
-        "nameShort": "Name must be at least 2 characters.",
-        "nameLong": "Name is too long.",
-        "emailRequired": "Email is required.",
-        "emailInvalid": "Please enter a valid email address.",
-        "messageRequired": "Message is required.",
-        "messageShort": "Message must be at least 10 characters.",
-        "messageLong": "Message is too long."
-      }
+      "send": "Send message"
     }
   },
 
