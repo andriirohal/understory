@@ -36,7 +36,7 @@ func main() {
   };
 
   router.Use(cors.New(corsConfig));
-  router.Use(middlewares.UniqueHandler, middlewares.ErrorHandler);
+  router.Use(middlewares.ErrorHandler, middlewares.UniqueHandler);
 
   router.GET("/profile", middlewares.Authenticate, controllers.GetLoggedInUser);
   router.GET("/profile/summary", middlewares.Authenticate, controllers.GetUserSummary);

@@ -6,8 +6,8 @@ import (
 );
 
 type UserPayload struct {
-  UserId string `json:"userId"`
-  Email  string `json:"email"`
+  UserId string `json:"userId"`;
+  Email string `json:"email"`;
   jwt.RegisteredClaims;
 };
 
