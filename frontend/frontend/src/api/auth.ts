@@ -15,7 +15,6 @@ let isLoggingIn = false;
 let isSigningUp = false;
 
 let refreshPromise: Promise<string | null> | null = null;
-
 let authPromise: Promise<CurrentUser | null> | null = null;
 
 export interface UserSummary {
@@ -48,23 +47,19 @@ function clearSession(): void {
 
 function translateAuthError(message: string): string {
   const errorMap: Record<string, string> = {
-    "We couldn't find an account with this email address":
-      "auth.errors.emailError",
-
+    "We couldn't find an account with this email": "auth.errors.emailError",
     "We couldn't verify your password": "auth.errors.passwordError",
-
+    "Name is required": "auth.errors.nameRequired",
     "Name must be 20 characters or less": "auth.errors.nameMaxLength",
-
-    "Please enter a valid email address": "auth.errors.invalidEmail",
-
+    "Please enter a valid email": "auth.errors.invalidEmail",
     "Password must be 8–100 characters": "auth.errors.passwordLength",
-
-    "An account with this email address already exists":
+    "User not found": "auth.errors.userNotFound",
+    "An account with this email already exists":
       "auth.errors.emailAlreadyExists",
+    "A plant with this name already exists": "errors.plantNameAlreadyExists",
   };
 
   const messageKey = message.trim();
-
   const translationKey = errorMap[messageKey];
 
   return translationKey ? t(translationKey) : messageKey;
@@ -117,7 +112,6 @@ export async function signUp(data: {
 
   if (!response.ok) {
     const message = await getErrorMessage(response);
-
     throw new Error(message || "Sign up failed");
   }
 
@@ -136,7 +130,6 @@ export async function logIn(data: { email: string; password: string }) {
 
   if (!response.ok) {
     const message = await getErrorMessage(response);
-
     throw new Error(message || "Log in failed");
   }
 
@@ -151,7 +144,6 @@ export async function logOut(): Promise<void> {
 
   if (!response.ok) {
     const message = await getErrorMessage(response);
-
     throw new Error(message || "Log out failed");
   }
 }
@@ -166,11 +158,11 @@ export async function handleLogOut(): Promise<void> {
   }
 }
 
-export async function handleLogInSubmit(event: SubmitEvent): Promise<boolean> {
+export async function handleLogInSubmit(event: SubmitEvent): Promise<void> {
   event.preventDefault();
 
   if (isLoggingIn) {
-    return false;
+    return;
   }
 
   isLoggingIn = true;
@@ -179,7 +171,7 @@ export async function handleLogInSubmit(event: SubmitEvent): Promise<boolean> {
 
   if (!(form instanceof HTMLFormElement)) {
     isLoggingIn = false;
-    return false;
+    return;
   }
 
   const submitButton = form.querySelector<HTMLButtonElement>(
@@ -201,7 +193,6 @@ export async function handleLogInSubmit(event: SubmitEvent): Promise<boolean> {
   const formData = new FormData(form);
 
   const email = String(formData.get("email") ?? "");
-
   const password = String(formData.get("password") ?? "");
 
   try {
@@ -225,28 +216,25 @@ export async function handleLogInSubmit(event: SubmitEvent): Promise<boolean> {
 
     localStorage.setItem("hasSession", "true");
 
+    form.reset();
+
     dispatchCartChange();
     dispatchAuthChanged();
-
-    return true;
   } catch (error) {
     if (errorElement && error instanceof Error) {
       errorElement.textContent = translateAuthError(error.message);
     }
-
-    return false;
   } finally {
     isLoggingIn = false;
-
     submitButton?.removeAttribute("disabled");
   }
 }
 
-export async function handleSignUpSubmit(event: SubmitEvent): Promise<boolean> {
+export async function handleSignUpSubmit(event: SubmitEvent): Promise<void> {
   event.preventDefault();
 
   if (isSigningUp) {
-    return false;
+    return;
   }
 
   isSigningUp = true;
@@ -255,7 +243,7 @@ export async function handleSignUpSubmit(event: SubmitEvent): Promise<boolean> {
 
   if (!(form instanceof HTMLFormElement)) {
     isSigningUp = false;
-    return false;
+    return;
   }
 
   const submitButton = form.querySelector<HTMLButtonElement>(
@@ -277,9 +265,7 @@ export async function handleSignUpSubmit(event: SubmitEvent): Promise<boolean> {
   const formData = new FormData(form);
 
   const name = String(formData.get("name") ?? "");
-
   const email = String(formData.get("email") ?? "");
-
   const password = String(formData.get("password") ?? "");
 
   try {
@@ -304,19 +290,16 @@ export async function handleSignUpSubmit(event: SubmitEvent): Promise<boolean> {
 
     localStorage.setItem("hasSession", "true");
 
+    form.reset();
+
     dispatchCartChange();
     dispatchAuthChanged();
-
-    return true;
   } catch (error) {
     if (errorElement && error instanceof Error) {
       errorElement.textContent = translateAuthError(error.message);
     }
-
-    return false;
   } finally {
     isSigningUp = false;
-
     submitButton?.removeAttribute("disabled");
   }
 }
@@ -349,7 +332,6 @@ export function refreshUserTokens(): Promise<string | null> {
       return result.accessToken;
     } catch (error) {
       console.error("Refresh request failed:", error);
-
       return null;
     } finally {
       refreshPromise = null;
@@ -435,7 +417,10 @@ export function fetchCurrentUser(): Promise<CurrentUser | null> {
 }
 
 export async function getUserSummary(): Promise<UserSummary> {
+  console.log("GET USER SUMMARY");
+
   let token = getAccessToken();
+  console.log("TOKEN:", token);
 
   if (!token) {
     token = await refreshUserTokens();
@@ -445,7 +430,7 @@ export async function getUserSummary(): Promise<UserSummary> {
     throw new Error("Not authenticated");
   }
 
-  let response = await fetch(`${AUTH_URL}/profile/summary`, {
+  const response = await fetch(`${AUTH_URL}/profile/summary`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -454,16 +439,22 @@ export async function getUserSummary(): Promise<UserSummary> {
     cache: "no-store",
   });
 
+  console.log("SUMMARY STATUS:", response.status);
+
+  const text = await response.text();
+  console.log("SUMMARY RESPONSE:", text);
+
   if (response.status === 401) {
     const newAccessToken = await refreshUserTokens();
 
+    console.log("REFRESHED TOKEN:", newAccessToken);
+
     if (!newAccessToken) {
       clearSession();
-
       throw new Error("Not authenticated");
     }
 
-    response = await fetch(`${AUTH_URL}/profile/summary`, {
+    const retryResponse = await fetch(`${AUTH_URL}/profile/summary`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${newAccessToken}`,
@@ -471,16 +462,22 @@ export async function getUserSummary(): Promise<UserSummary> {
       credentials: "include",
       cache: "no-store",
     });
+
+    console.log("RETRY STATUS:", retryResponse.status);
+
+    const retryText = await retryResponse.text();
+    console.log("RETRY RESPONSE:", retryText);
+
+    if (!retryResponse.ok) {
+      throw new Error(retryText || "Failed to get user summary");
+    }
+
+    return JSON.parse(retryText);
   }
 
   if (!response.ok) {
-    const message = await getResponseError(
-      response,
-      "Failed to get user summary",
-    );
-
-    throw new Error(message);
+    throw new Error(text || "Failed to get user summary");
   }
 
-  return response.json();
+  return JSON.parse(text);
 }

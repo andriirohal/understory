@@ -1,5 +1,5 @@
 import { renderPlantCard } from "../components";
-import { PlantSort, PlantFamily } from "../api";
+import { getAllPlants, PlantSort, PlantFamily } from "../api";
 import { t } from "../i18n";
 import { onClickOutside } from "../utils";
 
@@ -46,9 +46,7 @@ let shopState: ShopState = {};
 
 let currentPlants: Plant[] = [];
 
-let basePlants: Plant[] = [];
-
-export function renderPlants(plants: Plant[]): string {
+function renderPlants(plants: Plant[]): string {
   if (plants.length === 0) {
     return `
       <div class="empty_state">
@@ -215,36 +213,6 @@ export function renderShop(
   `;
 }
 
-function applyFamily(plants: Plant[], family?: PlantFamily): Plant[] {
-  if (!family) {
-    return plants;
-  }
-
-  return plants.filter((plant) => plant.family === family);
-}
-
-function applySort(plants: Plant[], sort?: PlantSort): Plant[] {
-  if (!sort) {
-    return plants;
-  }
-
-  const sorted = [...plants];
-
-  if (sort === "alphabetical") {
-    sorted.sort((a, b) => a.name.localeCompare(b.name));
-  } else if (sort === "cheapest") {
-    sorted.sort((a, b) => a.price - b.price);
-  } else if (sort === "expensive") {
-    sorted.sort((a, b) => b.price - a.price);
-  }
-
-  return sorted;
-}
-
-function applyShopState(state: ShopState): Plant[] {
-  return applySort(applyFamily(basePlants, state.family), state.sort);
-}
-
 function initSort(root: HTMLElement, state: ShopState): void {
   const sort = root.querySelector<HTMLElement>(".sort");
 
@@ -282,37 +250,41 @@ function initSort(root: HTMLElement, state: ShopState): void {
   });
 
   menu.querySelectorAll<HTMLButtonElement>("[data-sort]").forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", async () => {
       const sortValue = button.dataset.sort;
 
       const selectedSort = sortValue ? (sortValue as PlantSort) : undefined;
 
-      state.sort = selectedSort;
+      try {
+        const plants = await getAllPlants(100, 0, selectedSort, state.family);
 
-      const plants = applyShopState(state);
+        state.sort = selectedSort;
 
-      currentPlants = plants;
+        currentPlants = plants;
 
-      updateGrid(root, plants);
-      updateResultCount(root, plants);
+        updateGrid(root, plants);
+        updateResultCount(root, plants);
 
-      const label = trigger.querySelector("span");
+        const label = trigger.querySelector("span");
 
-      if (label) {
-        label.textContent = selectedSort
-          ? t(SORT_LABELS[selectedSort])
-          : t("shop.sort.featured");
+        if (label) {
+          label.textContent = selectedSort
+            ? t(SORT_LABELS[selectedSort])
+            : t("shop.sort.featured");
+        }
+
+        menu
+          .querySelectorAll<HTMLButtonElement>("[data-sort]")
+          .forEach((item) => {
+            item.classList.remove("active");
+          });
+
+        button.classList.add("active");
+
+        closeMenu();
+      } catch (error) {
+        console.error("SORT PLANTS ERROR:", error);
       }
-
-      menu
-        .querySelectorAll<HTMLButtonElement>("[data-sort]")
-        .forEach((item) => {
-          item.classList.remove("active");
-        });
-
-      button.classList.add("active");
-
-      closeMenu();
     });
   });
 
@@ -329,45 +301,47 @@ function initFamily(root: HTMLElement, state: ShopState): void {
   filters
     .querySelectorAll<HTMLButtonElement>("[data-family]")
     .forEach((button) => {
-      button.addEventListener("click", () => {
+      button.addEventListener("click", async () => {
         const family = button.dataset.family;
 
         const selectedFamily =
           family === "Araceae" || family === "Moraceae" ? family : undefined;
 
-        state.family = selectedFamily;
+        try {
+          const plants = await getAllPlants(100, 0, state.sort, selectedFamily);
 
-        const plants = applyShopState(state);
+          state.family = selectedFamily;
 
-        currentPlants = plants;
+          currentPlants = plants;
 
-        updateGrid(root, plants);
-        updateResultCount(root, plants);
+          updateGrid(root, plants);
+          updateResultCount(root, plants);
 
-        filters
-          .querySelectorAll<HTMLButtonElement>("[data-family]")
-          .forEach((item) => {
-            item.classList.remove("active");
-          });
+          filters
+            .querySelectorAll<HTMLButtonElement>("[data-family]")
+            .forEach((item) => {
+              item.classList.remove("active");
+            });
 
-        button.classList.add("active");
+          button.classList.add("active");
+        } catch (error) {
+          console.error("FILTER PLANTS ERROR:", error);
+        }
       });
     });
 }
 
-export function mountShop(root: HTMLElement, plants?: Plant[]): void {
-  if (plants) {
-    basePlants = plants;
-  } else if (basePlants.length === 0) {
-    basePlants = currentPlants;
-  }
-
+export function mountShop(root: HTMLElement): void {
   initSort(root, shopState);
   initFamily(root, shopState);
 }
 
 export function getShopState(): ShopState {
   return { ...shopState };
+}
+
+export function setShopState(state: ShopState): void {
+  shopState = { ...state };
 }
 
 export function refreshShopTranslations(root: HTMLElement): void {

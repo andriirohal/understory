@@ -1,4 +1,4 @@
-import { renderPlants } from "./shop";
+import { renderPlantCard } from "../components";
 
 import { t } from "../i18n";
 import type { Plant } from "./shop";
@@ -8,7 +8,7 @@ export function renderHome(plants: Plant[]): string {
     (plant) => plant.name === "Monstera Deliciosa",
   );
 
-  const arrivals = plants.slice(0, 3);
+  const arrivals = plants.slice(0, 4);
 
   const heroImage = featuredPlant
     ? `
@@ -122,7 +122,7 @@ export function renderHome(plants: Plant[]): string {
           class="grid"
           id="arrivals_grid"
         >
-          ${renderPlants(arrivals)}
+          ${arrivals.map(renderPlantCard).join("")}
         </div>
 
       </section>
@@ -136,15 +136,15 @@ export function renderHome(plants: Plant[]): string {
           </div>
 
           <h3
-            data-i18n="philosophy.titles.0"
+            data-i18n="philosophy.title1"
           >
-            ${t("philosophy.titles.0")}
+            ${t("philosophy.title1")}
           </h3>
 
           <p
-            data-i18n="philosophy.descriptions.0"
+            data-i18n="philosophy.description1"
           >
-            ${t("philosophy.descriptions.0")}
+            ${t("philosophy.description1")}
           </p>
 
         </div>
@@ -156,15 +156,15 @@ export function renderHome(plants: Plant[]): string {
           </div>
 
           <h3
-            data-i18n="philosophy.titles.1"
+            data-i18n="philosophy.title2"
           >
-            ${t("philosophy.titles.1")}
+            ${t("philosophy.title2")}
           </h3>
 
           <p
-            data-i18n="philosophy.descriptions.1"
+            data-i18n="philosophy.description2"
           >
-            ${t("philosophy.descriptions.1")}
+            ${t("philosophy.description2")}
           </p>
 
         </div>
@@ -176,15 +176,15 @@ export function renderHome(plants: Plant[]): string {
           </div>
 
           <h3
-            data-i18n="philosophy.titles.2"
+            data-i18n="philosophy.title3"
           >
-            ${t("philosophy.titles.2")}
+            ${t("philosophy.title3")}
           </h3>
 
           <p
-            data-i18n="philosophy.descriptions.2"
+            data-i18n="philosophy.description3"
           >
-            ${t("philosophy.descriptions.2")}
+            ${t("philosophy.description3")}
           </p>
 
         </div>
