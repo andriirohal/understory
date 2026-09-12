@@ -39,7 +39,7 @@
   "rare": {
     "eyebrow": "Seltene Kollektion",
     "title": "Seltene Exemplare",
-    "description": "1 Exemplar — Außergewöhnliche Pflanzen.",
+    "description": "— Außergewöhnliche Pflanzen.",
     "emptyTitle": "Keine seltenen Pflanzen gefunden.",
     "emptyDescription": "Schau bald wieder vorbei für neue seltene Pflanzen."
   },
@@ -116,7 +116,7 @@
 
   "cart": {
     "yourBag": "Dein Warenkorb",
-    "reviewYourBag": "Deinen Warenkorb prüfen",
+    "reviewYourBag": "Warenkorb ansehen",
     "orderSummary": "Bestellübersicht",
     "freeShipping": "Nur noch €{amount} für kostenlosen Versand",
     "freeShippingUnlocked": "Kostenloser Versand freigeschaltet",
@@ -179,7 +179,7 @@
     "addedToBagDescription": "Die Pflanze wurde in den Warenkorb gelegt",
     "addedMultipleToBagDescription": "{{quantity}} Pflanzen wurden hinzugefügt.",
     "increaseQuantity": "Menge erhöhen",
-    "addToBag": "In den Warenkorb",
+    "addToBag": "Hinzufügen",
     "addedToBag": "Zum Warenkorb hinzugefügt",
     "family": "Familie",
     "stock": "Verfügbarkeit",
@@ -238,23 +238,23 @@
 
     "guarantee": {
       "eyebrow": "Unser Versprechen",
-      "title": "90-Tage-Wurzelgarantie",
-      "intro": "Wenn sich Ihre Pflanze innerhalb von 90 Tagen nicht richtig einlebt, helfen wir Ihnen, die passende Lösung zu finden und sie wieder auf den richtigen Weg zu bringen",
+      "title": "90-Tage-Garantie",
+      "intro": "Wenn sich Ihre Pflanze in 90 Tagen nicht einlebt, helfen wir Ihnen.",
       "body": [
-        "Kontaktieren Sie unseren Support mit Ihrer Bestellnummer, damit wir die Details schnell prüfen und Ihnen bei den nächsten Schritten helfen können",
-        "Die Garantie umfasst die Wurzelentwicklung und normalen Versandstress, einschließlich der natürlichen Anpassung der Pflanze an eine neue Umgebung",
-        "Falls ein Ersatz erforderlich ist, stammt dieser aus der nächsten verfügbaren Charge derselben oder einer vergleichbaren Pflanze"
+        "Kontaktieren Sie unseren Support mit Ihrer Bestellnummer, damit wir Ihnen schnell helfen können.",
+        "Die Garantie umfasst die Wurzelentwicklung und normalen Versandstress bei der Eingewöhnung.",
+        "Falls nötig, erfolgt der Ersatz aus der nächsten verfügbaren Charge derselben oder einer vergleichbaren Pflanze."
       ]
     },
 
     "shipping": {
       "eyebrow": "Versand",
       "title": "Klimabewusster Versand",
-      "intro": "Jede Bestellung wird mit Blick auf die Pflanze, das Wetter und den gesamten Transportweg vorbereitet, um den Versandstress zu reduzieren",
+      "intro": "Jede Bestellung wird passend zu Pflanze, Wetter und Transport vorbereitet.",
       "body": [
-        "Wir versenden von Montag bis Mittwoch, damit die Pflanzen am Wochenende möglichst wenig Zeit in Lagern oder Versandzentren verbringen",
-        "Der saisonale Schutz wird abhängig vom Zielort, Wetter und den aktuellen Versandbedingungen ausgewählt",
-        "Bestellungen über 150 $ werden kostenlos versendet. Für kleinere Bestellungen berechnen wir eine Versandpauschale von 18 $"
+        "Wir versenden Montag bis Mittwoch, um Wochenendaufenthalte in Lagern und Versandzentren zu vermeiden.",
+        "Der saisonale Schutz richtet sich nach Zielort, Wetter und aktuellen Versandbedingungen.",
+        "Bestellungen über 150€ sind versandkostenfrei. Für kleinere Bestellungen gilt eine Versandpauschale von 18€."
       ]
     },
 

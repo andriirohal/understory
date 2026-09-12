@@ -39,7 +39,7 @@
   "rare": {
     "eyebrow": "Rzadka kolekcja",
     "title": "Rzadkie okazy",
-    "description": "1 okaz — Niezwykłe rośliny do Twojego domu.",
+    "description": "— Niezwykłe rośliny do Twojego domu.",
     "emptyTitle": "Nie znaleziono rzadkich roślin.",
     "emptyDescription": "Wkrótce pojawią się nowe rzadkie rośliny."
   },
@@ -179,7 +179,7 @@
     "backToShop": "Wróć do sklepu",
     "decreaseQuantity": "Zmniejsz ilość",
     "increaseQuantity": "Zwiększ ilość",
-    "addToBag": "Dodaj do koszyka",
+    "addToBag": "Dodaj",
     "addedToBag": "Dodano do koszyka",
     "family": "Rodzina",
     "stock": "Dostępność",
@@ -191,7 +191,7 @@
       "description": "Zdrowa Monstera z bujnymi, naturalnie rozdzielonymi liśćmi."
     },
     "fiddle": {
-      "description": "Tropikalna roślina z błyszczącymi, skrzypcowatymi liśćmi. Dobrze rośnie w jasnym świetle."
+      "description": "Tropikalna roślina z błyszczącymi liśćmi. Lubi jasne światło."
     }
   },
 
@@ -238,8 +238,8 @@
 
     "guarantee": {
       "eyebrow": "Nasza obietnica",
-      "title": "90-dniowa gwarancja na korzenie",
-      "intro": "Jeśli roślina nie zaaklimatyzuje się w ciągu 90 dni, pomożemy znaleźć odpowiednie rozwiązanie i przywrócić ją na właściwy tor",
+      "title": "90-dniowa gwarancja",
+      "intro": "Jeśli roślina nie zaaklimatyzuje się w 90 dni, pomożemy ją przywrócić do zdrowia.",
       "body": [
         "Skontaktuj się z pomocą techniczną i podaj numer zamówienia, abyśmy mogli szybko sprawdzić szczegóły i pomóc w kolejnych krokach",
         "Gwarancja obejmuje rozwój korzeni i normalny stres związany z transportem, w tym naturalne przystosowanie rośliny do nowego otoczenia",
@@ -249,12 +249,12 @@
 
     "shipping": {
       "eyebrow": "Wysyłka",
-      "title": "Wysyłka z myślą o klimacie",
-      "intro": "Każde zamówienie przygotowujemy z uwzględnieniem rośliny, pogody i całej trasy, aby ograniczyć stres związany z transportem",
+      "title": "Wysyłka klimatyczna",
+      "intro": "Każde zamówienie przygotowujemy z myślą o roślinie, pogodzie i trasie.",
       "body": [
-        "Wysyłamy od poniedziałku do środy, aby rośliny spędzały jak najmniej czasu w magazynach lub centrach przeładunkowych w weekend",
-        "Ochronę sezonową dobieramy do miejsca docelowego, pogody i aktualnych warunków wysyłki",
-        "Zamówienia powyżej 150 $ wysyłamy bezpłatnie. Przy mniejszych zamówieniach obowiązuje stała opłata za wysyłkę w wysokości 18 $"
+        "Wysyłamy od poniedziałku do środy, aby rośliny spędzały jak najmniej czasu w magazynach lub centrach przeładunkowych w weekend.",
+        "Ochronę sezonową dobieramy do miejsca docelowego, pogody i aktualnych warunków wysyłki.",
+        "Zamówienia powyżej 150€ wysyłamy bezpłatnie. Przy mniejszych zamówieniach obowiązuje stała opłata 18€."
       ]
     },
 
@@ -302,7 +302,7 @@
   },
 
   "footer": {
-    "description": "Mały dom roślin dla tych, którzy są gotowi poczekać na właściwy egzemplarz",
+    "description": "Mały dom roślin dla tych, którzy są gotowi poczekać na swój okaz.",
     "care": {
       "title": "Pielęgnacja",
       "options": [

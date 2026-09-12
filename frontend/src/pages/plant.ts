@@ -267,7 +267,7 @@ async function handleAddToCart(
 
     showCartToast(quantity);
   } catch (error) {
-    console.error("ADD TO CART ERROR:", error);
+    console.error(error);
   } finally {
     setButtonLoading(button, false);
 

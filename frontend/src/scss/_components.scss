@@ -24,6 +24,10 @@
     background 0.15s $ease,
     opacity 0.15s $ease;
 
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
+
   &:hover {
     background: $moss_dark;
   }
@@ -78,6 +82,10 @@
 
   @media (max-width: 480px) {
     font-size: 10px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 9px;
   }
 
   &:hover {
@@ -309,7 +317,7 @@
   @media (max-width: 550px) {
     grid-template-columns: 1fr;
 
-    gap: 25px;
+    gap: 30px;
   }
 }
 
@@ -325,8 +333,24 @@
 
   text-align: center;
 
+  @media (max-width: 480px) {
+    gap: 8px;
+  }
+
   .btn {
     margin-top: 10px;
+  }
+
+  h1 {
+    @media (max-width: 480px) {
+      font-size: 25px;
+    }
+  }
+
+  p {
+    @media (max-width: 480px) {
+      font-size: 13px;
+    }
   }
 }
 
@@ -718,7 +742,7 @@
   flex-direction: column;
   gap: 1rem;
 
-  padding: 0 0 1.25rem;
+  padding: 0 0 1rem;
 }
 
 .checkout_summary .checkout_item {
@@ -797,6 +821,10 @@
   gap: 9px;
 
   margin-bottom: 20px;
+
+  @media (max-width: 480px) {
+    gap: 8px;
+  }
 }
 
 .summary_total {

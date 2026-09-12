@@ -39,7 +39,7 @@
   "rare": {
     "eyebrow": "Rare collection",
     "title": "Rare Specimens",
-    "description": "1 specimen — Unusual plants for your home.",
+    "description": "— Unusual plants for your home.",
     "emptyTitle": "No rare plants found.",
     "emptyDescription": "Check back soon for new rare plants."
   },
@@ -179,7 +179,7 @@
     "addedMultipleToBagDescription": "{{quantity}} plants have been added to your bag.",
     "decreaseQuantity": "Decrease quantity",
     "increaseQuantity": "Increase quantity",
-    "addToBag": "Add to bag",
+    "addToBag": "Add",
     "addedToBag": "Added to bag",
     "family": "Family",
     "stock": "Availability",
@@ -216,7 +216,7 @@
   "static": {
     "care": {
       "eyebrow": "Care journal",
-      "title": "Notes from the greenhouse",
+      "title": "Greenhouse Notes",
       "intro": "Practical tips for keeping your plants healthy and thriving at home",
       "body": [
         "Rare aroids are sensitive to excess water. Let the soil dry well between waterings and always check its condition before watering again",
@@ -238,8 +238,8 @@
 
     "guarantee": {
       "eyebrow": "Our promise",
-      "title": "90-day root guarantee",
-      "intro": "If your plant doesn't settle in within 90 days, we'll help find the right solution and get it back on track",
+      "title": "90-Day Guarantee",
+      "intro": "If your plant doesn’t settle in within 90 days, we’ll help get it back on track.",
       "body": [
         "Contact support with your order number so we can quickly review the details and help with the next steps",
         "The guarantee covers root development and normal shipping stress, including the plant's natural adjustment to a new environment",
@@ -249,12 +249,12 @@
 
     "shipping": {
       "eyebrow": "Shipping",
-      "title": "Shipping with climate in mind",
-      "intro": "Every order is prepared with the plant, weather, and entire journey in mind to help reduce shipping stress",
+      "title": "Climate-smart shipping",
+      "intro": "Every order is prepared to reduce shipping stress.",
       "body": [
-        "We ship Monday through Wednesday so plants spend as little time as possible in warehouses or transit centers over the weekend",
-        "Seasonal protection is selected based on the destination, weather, and current shipping conditions",
-        "Orders over $150 ship free. Smaller orders have a flat $18 shipping fee"
+        "We ship Monday–Wednesday to minimize weekend transit and warehouse time, helping plants arrive in the best possible condition.",
+        "Seasonal protection is selected based on the destination, weather, and current shipping conditions to keep your plant safe throughout its journey.",
+        "Orders over €150 ship free. Smaller orders have a flat €18 shipping fee, keeping delivery simple and predictable."
       ]
     },
 
